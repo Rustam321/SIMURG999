@@ -174,7 +174,6 @@ input:focus-visible {
   z-index: 1000;
   background: rgba(5, 8, 16, 0.7);
   backdrop-filter: blur(14px);
-  border-top: clamp(3px, 0.4vw, 5px) solid #c9a84c;
   border-bottom: 1px solid var(--border-subtle);
   transition: background var(--transition-base);
 }
@@ -274,17 +273,11 @@ input:focus-visible {
    ========================================================================== */
 .hero {
   position: relative;
-  height: 33.33vh;
-  min-height: 260px;
-  overflow: visible;
-  border-top: clamp(3px, 0.4vw, 6px) solid #c9a84c;
+  padding: 130px 0 60px;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-/* ─── Section background images ─────────────────────────────────────────
-   To add your own photo, remove the --placeholder class from the div
-   in index.html and add a rule like:
-     .hero__bg    { background-image: url('../img/bg1.png'); }
-   ───────────────────────────────────────────────────────────────────── */
 .hero__bg,
 .modules__bg,
 .cycle__bg,
@@ -297,12 +290,6 @@ input:focus-visible {
   z-index: -2;
   opacity: 0.55;
 }
-
-.hero__bg--placeholder    { background: radial-gradient(ellipse at 60% 40%, #0d1a2f 0%, var(--bg-deep) 100%); opacity: 1; }
-.modules__bg--placeholder { background: radial-gradient(ellipse at 40% 60%, #0a1a14 0%, var(--bg-deep) 100%); opacity: 1; }
-.cycle__bg--placeholder   { background: radial-gradient(ellipse at 50% 50%, #0f1525 0%, var(--bg-deep) 100%); opacity: 1; }
-.about__bg--placeholder   { background: radial-gradient(ellipse at 30% 40%, #14102a 0%, var(--bg-deep) 100%); opacity: 1; }
-.bank__bg--placeholder    { background: radial-gradient(ellipse at 60% 60%, #0a1a14 0%, var(--bg-deep) 100%); opacity: 1; }
 
 .hero__overlay,
 .modules__overlay,
@@ -317,54 +304,68 @@ input:focus-visible {
     linear-gradient(180deg, rgba(5, 8, 16, 0.55) 0%, rgba(5, 8, 16, 0.85) 60%, var(--bg-base) 100%);
 }
 
-.hero__phoenix-wrap {
-  position: absolute;
-  top: clamp(8px, 2vw, 28px);
-  right: clamp(16px, 3vw, 64px);
-  width: clamp(70px, 20vw, 440px);
-  z-index: 10;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.hero__inner {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 80px;
-  position: relative;
-  z-index: 1;
-}
-
+.hero__inner { position: relative; }
+.hero__top { margin-bottom: 40px; }
+.hero__title-block { margin-bottom: 56px; max-width: 720px; }
 .hero__title {
-  font-family: var(--font-heading);
-  font-size: clamp(24px, 5.5vw, 68px);
-  font-weight: 700;
+  font-size: clamp(34px, 6vw, 56px);
   line-height: 1.1;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  text-shadow: 0 2px 24px rgba(0,0,0,0.55);
-  white-space: nowrap;
 }
-
+.hero__title span { color: var(--accent-blue); }
 .hero__subtitle {
-  margin-top: 10px;
+  margin-top: 14px;
   font-family: var(--font-heading);
-  font-size: clamp(11px, 1.8vw, 22px);
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-size: clamp(13px, 1.4vw, 16px);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-blue);
+  color: var(--accent-cyan);
 }
 
+.hero__content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.hero__left > .logo { margin-bottom: 24px; }
+
+.hero__heading {
+  font-size: clamp(24px, 3.2vw, 34px);
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+
+.hero__divider {
+  width: 110px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), transparent);
+  margin-bottom: 22px;
+}
+
+.hero__text {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 460px;
+  margin-bottom: 32px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .hero__phoenix {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: min(100%, 380px);
   mix-blend-mode: screen;
-  filter: drop-shadow(0 0 40px rgba(214, 185, 123, 0.35)) brightness(1.1);
+  filter: drop-shadow(0 20px 40px rgba(214, 185, 123, 0.3)) brightness(1.1);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -373,50 +374,7 @@ input:focus-visible {
   50% { transform: translateY(-14px); }
 }
 
-/* ── Intro section ──────────────────────────────────────────────── */
-.intro {
-  position: relative;
-  padding: 64px 0 72px;
-  background: var(--bg-base);
-}
-
-.intro__head {
-  max-width: 700px;
-  margin-bottom: 48px;
-}
-
-.intro__heading {
-  font-family: var(--font-heading);
-  font-size: clamp(20px, 3vw, 34px);
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-}
-
-.intro__divider {
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-blue), transparent);
-  margin-bottom: 20px;
-}
-
-.intro__text {
-  font-size: 17px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 28px;
-}
-
-.intro__actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.intro__features {
+.hero__features {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 18px;
@@ -1139,7 +1097,7 @@ input:focus-visible {
    Responsive
    ========================================================================== */
 @media (max-width: 1100px) {
-  .intro__features { grid-template-columns: repeat(3, 1fr); }
+  .hero__features { grid-template-columns: repeat(3, 1fr); }
   .module-row { grid-template-columns: 1fr; }
   .module-row__items { grid-template-columns: repeat(3, 1fr); }
   .participants__cats { grid-template-columns: repeat(3, 1fr); }
@@ -1168,8 +1126,11 @@ input:focus-visible {
   }
   .nav.is-open .nav__link { padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
 
-  .hero__phoenix-wrap { width: clamp(60px, 16vw, 240px); }
-  .intro__features { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding-top: 110px; }
+  .hero__content { grid-template-columns: 1fr; }
+  .hero__right { order: -1; margin-bottom: 12px; }
+  .hero__phoenix { width: 220px; }
+  .hero__features { grid-template-columns: repeat(2, 1fr); }
 
   .module-row__items { grid-template-columns: repeat(2, 1fr); }
 
@@ -1198,10 +1159,9 @@ input:focus-visible {
 
 @media (max-width: 560px) {
   .container { padding: 0 18px; }
-  .intro__features { grid-template-columns: 1fr 1fr; }
-  .intro__actions { flex-direction: column; align-items: stretch; }
-  .intro__actions .btn { justify-content: center; }
-  .hero__title { white-space: normal; }
+  .hero__features { grid-template-columns: 1fr 1fr; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn { justify-content: center; }
   .module-row__items { grid-template-columns: 1fr 1fr; }
   .participants__cats { grid-template-columns: 1fr; }
   .team__grid { grid-template-columns: 1fr; }
