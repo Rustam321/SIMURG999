@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIMURG — Торговая система</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#hero" class="logo">
+      <span class="logo__bar"></span>
+      <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about" class="nav__link">О системе</a>
+      <a href="#modules" class="nav__link">Модули</a>
+      <a href="#cycle" class="nav__link">Цикл сделки</a>
+      <a href="#participants" class="nav__link">Участники</a>
+      <a href="#bank" class="nav__link">SIMURG-Банк</a>
+      <a href="#team" class="nav__link">Команда</a>
+      <a href="#contacts" class="nav__link">Контакты</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" style="background-image:url('img/bg1.png')"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__inner">
+      <div class="hero__top">
+        <a href="#hero" class="logo">
+          <span class="logo__bar"></span>
+          <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+        </a>
+      </div>
+
+      <div class="hero__title-block">
+        <h1 class="hero__title">Торговая<br>система <span>SIMURG</span></h1>
+        <p class="hero__subtitle">Интеллектуальные решения в трансграничной торговле</p>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__left">
+          <a href="#hero" class="logo logo--sm">
+            <span class="logo__bar"></span>
+            <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+          </a>
+          <h2 class="hero__heading">Интеллектуальная система<br>управления международными сделками</h2>
+          <div class="hero__divider"></div>
+          <p class="hero__text">
+            <span class="accent">SIMURG</span> объединяет искусственный интеллект,
+            данные и процессы в единую среду,
+            чтобы вы опережали рынок.
+          </p>
+          <div class="hero__actions">
+            <a href="#about" class="btn btn--outline">
+              <span class="btn__icon">i</span>
+              О системе
+            </a>
+            <a href="#" class="btn btn--ghost">
+              <span class="btn__icon btn__icon--user"></span>
+              <span class="btn__text">
+                ВЭБ-ПОРТАЛ
+                <small>Trade Officer</small>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="hero__right">
+          <img src="img/logo-phoenix.png" alt="Simurg Phoenix" class="hero__phoenix">
+        </div>
+      </div>
+
+      <div class="hero__features">
+        <div class="feature-card" data-num="0.1">
+          <div class="feature-card__top">
+            <span class="feature-card__icon feature-card__icon--brain"></span>
+            <span class="feature-card__num">0.1</span>
+          </div>
+          <h3>AI DRIVEN</h3>
+          <p>Искусственный интеллект анализирует, предвидит, оценивает риски и предлагает решения.</p>
+        </div>
+        <div class="feature-card" data-num="0.2">
+          <div class="feature-card__top">
+            <span class="feature-card__icon feature-card__icon--target"></span>
+            <span class="feature-card__num">0.2</span>
+          </div>
+          <h3>SMART EXECUTION</h3>
+          <p>Оптимизация условий и координация всех сторон сделки в реальном времени.</p>
+        </div>
+        <div class="feature-card" data-num="0.3">
+          <div class="feature-card__top">
+            <span class="feature-card__icon feature-card__icon--shield"></span>
+            <span class="feature-card__num">0.3</span>
+          </div>
+          <h3>RISK CONTROL</h3>
+          <p>Непрерывный мониторинг рисков, комплаенса и надёжности контрагентов.</p>
+        </div>
+        <div class="feature-card" data-num="0.4">
+          <div class="feature-card__top">
+            <span class="feature-card__icon feature-card__icon--chart"></span>
+            <span class="feature-card__num">0.4</span>
+          </div>
+          <h3>ANALYTICS & INSIGHTS</h3>
+          <p>Глубокая аналитика рынка, товаров, логистики и финансовых потоков.</p>
+        </div>
+        <div class="feature-card" data-num="0.5">
+          <div class="feature-card__top">
+            <span class="feature-card__icon feature-card__icon--globe"></span>
+            <span class="feature-card__num">0.5</span>
+          </div>
+          <h3>GLOBAL CONNECT</h3>
+          <p>Интеграция рынков, банков, товаров, логистики и регуляторов в единой системе SIMURG.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONAL MODULES -->
+  <section class="modules" id="modules">
+    <div class="modules__bg" style="background-image:url('img/bg2.png')"></div>
+    <div class="modules__overlay"></div>
+    <div class="container">
+      <h2 class="section-title">Операционные<br><span>модули логистики</span></h2>
+
+      <div class="module-row">
+        <div class="module-row__info module-row__info--blue">
+          <h3>RISK <span>ENGINE</span></h3>
+          <p>Система управления рисками на основе данных и технологий для выявления, оценки и снижения потенциальных угроз на всех этапах цепочки поставок.</p>
+        </div>
+        <div class="module-row__items">
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--shield"></span>
+            <p>Идентификация и оценка рисков</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--pulse"></span>
+            <p>Мониторинг и раннее оповещение</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--scales"></span>
+            <p>Аналитика и прогнозирование рисков</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--sliders"></span>
+            <p>Управление и снижение рисков</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--clipboard"></span>
+            <p>Отчётность и контроль соответствия</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-row__info module-row__info--green">
+          <h3>АНАЛИТИКА И <span>МАРКЕТИНГ</span></h3>
+          <p>Данные, инсайты и стратегии для роста продаж, эффективного продвижения и укрепления конкурентных позиций на рынке.</p>
+        </div>
+        <div class="module-row__items">
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--bars"></span>
+            <p>Анализ рынков и конкурентной среды</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--pie"></span>
+            <p>Сегментация и анализ целевой аудитории</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--pulse"></span>
+            <p>Оценка эффективности каналов и рекламных кампаний</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--megaphone"></span>
+            <p>Разработка стратегий продвижения и брендинга</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--target"></span>
+            <p>Прогнозирование спроса и анализ трендов</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-row__info module-row__info--purple">
+          <h3>ТОРГОВАЯ <span>ЛОГИСТИКА</span></h3>
+          <p>Организация и контроль поставок, документооборота и взаимодействия со всеми участниками цепочки.</p>
+        </div>
+        <div class="module-row__items">
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--shield"></span>
+            <p>Управление поставками и маршрутизация</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--clipboard"></span>
+            <p>Документооборот и таможенное оформление</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--pulse"></span>
+            <p>Контроль сроков и статусов поставок</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--sliders"></span>
+            <p>Координация с перевозчиками и складами</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--globe"></span>
+            <p>Глобальное отслеживание грузов</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CYCLE -->
+  <section class="cycle" id="cycle">
+    <div class="cycle__bg" style="background-image:url('img/bg2.png')"></div>
+    <div class="cycle__overlay"></div>
+    <div class="container">
+      <h2 class="section-title section-title--center">Единый цикл управления сделкой от<br>запроса до результата</h2>
+
+      <div class="cycle__roles">
+        <div class="cycle__role">
+          <span class="cycle__role-icon cycle__role-icon--officer"></span>
+          <h4>TRADE OFFICER</h4>
+          <p>Персональный менеджер сопровождает сделки на всех этапах</p>
+        </div>
+        <div class="cycle__role">
+          <span class="cycle__role-icon cycle__role-icon--user"></span>
+          <h4>ЛИЧНЫЙ КАБИНЕТ</h4>
+          <p>Удобное управление заявками, документами и операциями онлайн</p>
+        </div>
+        <div class="cycle__role">
+          <span class="cycle__role-icon cycle__role-icon--globe"></span>
+          <h4>ВЭБ-ПОРТАЛ</h4>
+          <p>Доступ к инструментам, сервисам и аналитике в 24/7 режиме</p>
+        </div>
+        <div class="cycle__role">
+          <span class="cycle__role-icon cycle__role-icon--users"></span>
+          <h4>УЧАСТНИКИ</h4>
+          <p>Поставщики, покупатели, партнёры и агенты по всему миру</p>
+        </div>
+      </div>
+
+      <div class="cycle__line"></div>
+
+      <div class="cycle__steps">
+        <div class="cycle__step">
+          <span class="cycle__step-icon cycle__step-icon--request"></span>
+          <h4>ЗАПРОС</h4>
+          <p>Формирование запроса на поставку или услугу</p>
+        </div>
+        <span class="cycle__arrow">&raquo;</span>
+        <div class="cycle__step">
+          <span class="cycle__step-icon cycle__step-icon--analysis"></span>
+          <h4>АНАЛИЗ</h4>
+          <p>Анализ рынка и подбор оптимальных решений</p>
+        </div>
+        <span class="cycle__arrow">&raquo;</span>
+        <div class="cycle__step">
+          <span class="cycle__step-icon cycle__step-icon--agreement"></span>
+          <h4>СОГЛАСОВАНИЕ</h4>
+          <p>Условия сделки и документы утверждаются</p>
+        </div>
+        <span class="cycle__arrow">&raquo;</span>
+        <div class="cycle__step">
+          <span class="cycle__step-icon cycle__step-icon--execution"></span>
+          <h4>ИСПОЛНЕНИЕ</h4>
+          <p>Организация поставки и выполнение обязательств</p>
+        </div>
+        <span class="cycle__arrow">&raquo;</span>
+        <div class="cycle__step">
+          <span class="cycle__step-icon cycle__step-icon--result"></span>
+          <h4>РЕЗУЛЬТАТ</h4>
+          <p>Успешная сделка и долгосрочное партнёрство</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__bg" style="background-image:url('img/bg3.png')"></div>
+    <div class="about__overlay"></div>
+    <div class="container">
+      <h2 class="section-title section-title--center">О торговой системе <span>SIMURG</span></h2>
+
+      <div class="about__list">
+        <div class="about__item">
+          <h3>БИЗНЕС-МОДЕЛЬ ТОРГОВОЙ СИСТЕМЫ <span>SIMURG INTELLIGENCE</span></h3>
+          <p>Это система, которая превращает неопределённость международной торговли в управляемую структуру сделки через аналитику, предиктивные риски, финансовое моделирование и стратегию исполнения. Мы не продаём действия — мы продаём результат сделки с контролем рисков.</p>
+        </div>
+        <div class="about__item">
+          <h3>НАША МИССИЯ</h3>
+          <p>Создавать интеллектуальную инфраструктуру глобальной торговли, где каждая сделка становится предсказуемой, защищённой и результативной для всех участников.</p>
+        </div>
+        <div class="about__item">
+          <h3>КАК МЫ РАБОТАЕМ</h3>
+          <p>Мы объединяем данные, аналитику, финансы и исполнение в единую систему управления сделкой в реальном времени через <strong>SIMURG CONTROL TOWER</strong> и <strong>SIMURG-БАНК</strong>.</p>
+        </div>
+        <div class="about__item">
+          <h3>НАШЕ ПРЕИМУЩЕСТВО</h3>
+          <p>Уникальная интеграция аналитики, финансовой логистики и контроля исполнения в одной экосистеме, что снижает неопределённость, минимизирует риски и увеличивает вероятность успешного завершения сделки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS MODEL B2Q/B2B/B2C -->
+  <section class="business">
+    <div class="container business__inner">
+      <div class="business__intro">
+        <a href="#hero" class="logo">
+          <span class="logo__bar"></span>
+          <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+        </a>
+        <p>Мы выстраиваем эффективные связи между бизнесом, государством и потребителями, обеспечивая прозрачность, скорость и надёжность на каждом этапе международной торговли.</p>
+      </div>
+      <div class="business__globe">
+        <div class="globe"></div>
+      </div>
+      <div class="business__cards">
+        <div class="biz-card biz-card--blue">
+          <h3>B2Q</h3>
+          <span>BUSINESS TO GOVERNMENT</span>
+          <ul>
+            <li>Взаимодействие с государственными органами и учреждениями.</li>
+            <li>Госзакупки, тендеры, лицензирование.</li>
+            <li>Сертификация, таможенные процедуры и регулирование.</li>
+          </ul>
+        </div>
+        <div class="biz-card biz-card--green">
+          <h3>B2B</h3>
+          <span>BUSINESS TO BUSINESS</span>
+          <ul>
+            <li>Работа с корпоративными клиентами и партнёрами.</li>
+            <li>Оптовые поставки, контракты, логистика.</li>
+            <li>Финансовые расчёты и совместные проекты.</li>
+          </ul>
+        </div>
+        <div class="biz-card biz-card--purple">
+          <h3>B2C</h3>
+          <span>BUSINESS TO CONSUMER</span>
+          <ul>
+            <li>Взаимодействие с конечными потребителями.</li>
+            <li>Розничные продажи, e-commerce, доставка.</li>
+            <li>Клиентский сервис и программы лояльности.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPANTS BELARUS -->
+  <section class="participants" id="participants">
+    <div class="container participants__inner">
+      <div class="participants__main">
+        <div class="participants__header">
+          <span class="flag flag--by"></span>
+          <div>
+            <h2>УЧАСТНИКИ <span>SIMURG</span> В РЕСПУБЛИКЕ БЕЛАРУСЬ</h2>
+            <p>Компании из различных отраслей экономики, представленные в каждой из стран платформы.</p>
+          </div>
+        </div>
+        <div class="participants__cats">
+          <div class="cat cat--blue">
+            <h4>ПРОИЗВОДИТЕЛИ</h4>
+            <p>Предприятия всех масштабов, производящие товары и продукцию для внутреннего и международного рынков.</p>
+            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+          </div>
+          <div class="cat cat--green">
+            <h4>ЛОГИСТИЧЕСКИЕ ОПЕРАТОРЫ</h4>
+            <p>Компании, обеспечивающие международные и локальные перевозки, складские услуги и логистические решения.</p>
+            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+          </div>
+          <div class="cat cat--purple">
+            <h4>БАНКИ</h4>
+            <p>Финансовые институты, предоставляющие услуги по международным платежам, кредитованию и торговому финансированию.</p>
+            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+          </div>
+          <div class="cat cat--orange">
+            <h4>СТРАХОВЫЕ КОМПАНИИ</h4>
+            <p>Компании, предоставляющие страховые решения для защиты бизнеса и минимизации коммерческих рисков.</p>
+            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+          </div>
+          <div class="cat cat--cyan">
+            <h4>AI НАПРАВЛЕНИЕ</h4>
+            <p>Технологические компании и AI-решения, оптимизирующие процессы, аналитику и принятие решений в торговле.</p>
+            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+          </div>
+        </div>
+        <div class="participants__footer">
+          <span class="participants__footer-icon"></span>
+          <div>
+            <h4>SIMURG ОБЪЕДИНЯЕТ ПАРТНЁРОВ ДЛЯ УСТОЙЧИВОГО РОСТА</h4>
+            <p>Широкая экосистема участников — основа эффективной трансграничной торговли.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="officer-card">
+        <div class="officer-card__photo" style="background-image:url('img/officer.jpeg')"></div>
+        <span class="officer-card__badge">TRADE OFFICER</span>
+        <h3>МАКСИМ<br>ПРИСТУПА</h3>
+        <a href="#" class="btn btn--outline btn--full">
+          <span class="btn__icon btn__icon--user"></span>
+          ЛИЧНЫЙ КАБИНЕТ →
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SIMURG BANK -->
+  <section class="bank" id="bank">
+    <div class="bank__bg" style="background-image:url('img/bg2.png')"></div>
+    <div class="bank__overlay"></div>
+    <div class="container">
+      <div class="bank__top">
+        <div class="bank__logo-row">
+          <span class="bank__icon"></span>
+          <div>
+            <h3>SIMURG-БАНК</h3>
+            <small>ФИНАНСОВАЯ ИНФРАСТРУКТУРА ДЛЯ ГЛОБАЛЬНОЙ ТОРГОВЛИ</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="bank__grid">
+        <div class="bank__left">
+          <h2>ВЭБ-ПОРТАЛ<br><span>TRADE OFFICER</span></h2>
+          <h4>ЛИЧНЫЙ КАБИНЕТ</h4>
+          <p>Единая цифровая платформа для управления международной торговлей, взаимодействия с партнёрами и контроля всех операций в режиме реального времени.</p>
+          <a href="#" class="btn btn--outline-blue">
+            <span class="btn__icon btn__icon--user"></span>
+            ВОЙТИ В СИСТЕМУ →
+          </a>
+        </div>
+
+        <div class="bank__right">
+          <h4>УЧАСТНИКИ И TRADE OFFICER ПО СТРАНАМ</h4>
+          <div class="countries">
+            <a href="#" class="country"><span class="flag flag--ru"></span>РОССИЯ →</a>
+            <a href="#" class="country"><span class="flag flag--by"></span>БЕЛАРУСЬ →</a>
+            <a href="#" class="country"><span class="flag flag--kz"></span>КАЗАХСТАН →</a>
+            <a href="#" class="country"><span class="flag flag--cn"></span>КИТАЙ →</a>
+            <a href="#" class="country"><span class="flag flag--hk"></span>САР ГОНКОНГ →</a>
+            <a href="#" class="country"><span class="flag flag--sg"></span>СИНГАПУР →</a>
+            <a href="#" class="country"><span class="flag flag--ch"></span>ШВЕЙЦАРИЯ →</a>
+            <a href="#" class="country"><span class="flag flag--bg"></span>БОЛГАРИЯ →</a>
+            <a href="#" class="country"><span class="flag flag--mk"></span>СЕВЕРНАЯ МАКЕДОНИЯ →</a>
+            <a href="#" class="country"><span class="flag flag--bh"></span>КОРОЛЕВСТВО БАХРЕЙН →</a>
+            <a href="#" class="country"><span class="flag flag--sa"></span>САУДОВСКАЯ АРАВИЯ →</a>
+            <a href="#" class="country"><span class="flag flag--tr"></span>ТУРЦИЯ →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="container">
+      <h2 class="section-title">ИНФОРМАЦИОННАЯ ЛОГИСТИКА -<br><span>В ТОРГОВОЙ СИСТЕМЕ SIMURG-БАНК</span></h2>
+      <p class="team__desc">Комплексное решение для бизнес-продуктов сегментов <strong>B2Q, B2B, B2C</strong> в глобальной торговле на платформе <strong>SIMURG-БАНК</strong>.</p>
+
+      <div class="team__grid">
+        <div class="team-card">
+          <div class="team-card__photo team-card__photo--1" style="background-image:url('img/team1.jpeg')"></div>
+          <div class="team-card__body">
+            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
+            <h4>EVGENIY <span>GURKIN</span></h4>
+            <p>Director of Information and Financial Logistics</p>
+            <small>EAEU</small>
+            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo team-card__photo--2" style="background-image:url('img/team2.jpeg')"></div>
+          <div class="team-card__body">
+            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
+            <h4>RAPHAEL <span>WU</span></h4>
+            <p>Head of Operational Control and Financial Events</p>
+            <small>📍 Hong Kong — China</small>
+            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo team-card__photo--3" style="background-image:url('img/team3.jpeg')"></div>
+          <div class="team-card__body">
+            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
+            <h4>MARINA <span>PANASOVSKA</span></h4>
+            <p>Director of Deal Execution, Risk and Compliance</p>
+            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo team-card__photo--4" style="background-image:url('img/team4.jpeg')"></div>
+          <div class="team-card__body">
+            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
+            <h4>NIKITA <span>SEMKOVSKY</span></h4>
+            <p>Director of Analytics and Data Intelligence</p>
+            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacts">
+    <div class="footer__map"></div>
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <ul class="footer__list">
+          <li><span class="footer__icon footer__icon--network"></span>Интеллектуальная система управления международными сделками</li>
+          <li><span class="footer__icon footer__icon--scale"></span>Бизнес-модель B2Q, B2B, B2C</li>
+          <li><span class="footer__icon footer__icon--db"></span>Информационная логистика</li>
+          <li><span class="footer__icon footer__icon--bank"></span>SIMURG-Банк</li>
+          <li><span class="footer__icon footer__icon--gear"></span>Операционные модули логистики</li>
+          <li><span class="footer__icon footer__icon--globe"></span>Веб-портал — Trade Officer — участники по странам</li>
+        </ul>
+      </div>
+      <div class="footer__col footer__col--contacts">
+        <h3>ТОРГОВАЯ СИСТЕМА<br><span>SIMURG</span></h3>
+        <small>ДЕПАРТАМЕНТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ</small>
+        <p><span class="footer__icon footer__icon--phone"></span> ТЕЛЕФОН: <a href="tel:+375445550806">+375 44 555 08 06</a></p>
+        <p><span class="footer__icon footer__icon--phone"></span> ТЕЛЕФОН: <a href="tel:+79254451949">+7 925 445 19 49</a></p>
+        <p><span class="footer__icon footer__icon--mail"></span> E-MAIL: <a href="mailto:info@simurg.io">info@simurg.io</a></p>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
