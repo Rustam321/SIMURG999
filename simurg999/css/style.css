@@ -278,6 +278,11 @@ input:focus-visible {
   min-height: 100vh;
 }
 
+/* ─── Section background images ─────────────────────────────────────────
+   To add your own photo, remove the --placeholder class from the div
+   in index.html and add a rule like:
+     .hero__bg    { background-image: url('../img/bg1.png'); }
+   ───────────────────────────────────────────────────────────────────── */
 .hero__bg,
 .modules__bg,
 .cycle__bg,
@@ -290,6 +295,12 @@ input:focus-visible {
   z-index: -2;
   opacity: 0.55;
 }
+
+.hero__bg--placeholder    { background: radial-gradient(ellipse at 60% 40%, #0d1a2f 0%, var(--bg-deep) 100%); opacity: 1; }
+.modules__bg--placeholder { background: radial-gradient(ellipse at 40% 60%, #0a1a14 0%, var(--bg-deep) 100%); opacity: 1; }
+.cycle__bg--placeholder   { background: radial-gradient(ellipse at 50% 50%, #0f1525 0%, var(--bg-deep) 100%); opacity: 1; }
+.about__bg--placeholder   { background: radial-gradient(ellipse at 30% 40%, #14102a 0%, var(--bg-deep) 100%); opacity: 1; }
+.bank__bg--placeholder    { background: radial-gradient(ellipse at 60% 60%, #0a1a14 0%, var(--bg-deep) 100%); opacity: 1; }
 
 .hero__overlay,
 .modules__overlay,
