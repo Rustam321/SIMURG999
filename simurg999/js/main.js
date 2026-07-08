@@ -1,37 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.getElementById('header');
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
+  const backdrop = document.getElementById('navBackdrop');
   const toTop = document.getElementById('toTop');
 
-  // Mobile menu toggle
-  burger.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    burger.classList.toggle('is-active', isOpen);
-    burger.setAttribute('aria-expanded', String(isOpen));
-  });
+  // Side menu (left drawer)
+  if (burger && nav && backdrop) {
+    const setMenu = (open) => {
+      nav.classList.toggle('is-open', open);
+      burger.classList.toggle('is-active', open);
+      backdrop.classList.toggle('is-visible', open);
+      document.body.classList.toggle('menu-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    };
 
-  nav.querySelectorAll('.nav__link').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      burger.classList.remove('is-active');
-      burger.setAttribute('aria-expanded', 'false');
+    burger.addEventListener('click', () => {
+      setMenu(!nav.classList.contains('is-open'));
     });
-  });
 
-  // Header background + back-to-top visibility on scroll
-  const onScroll = () => {
-    const scrolled = window.scrollY > 40;
-    header.classList.toggle('is-scrolled', scrolled);
-    toTop.classList.toggle('is-visible', window.scrollY > 500);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+    backdrop.addEventListener('click', () => setMenu(false));
+
+    nav.querySelectorAll('.nav__link').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        setMenu(false);
+        burger.focus();
+      }
+    });
+  }
 
   // Back to top
-  toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  if (toTop) {
+    const onScroll = () => {
+      toTop.classList.toggle('is-visible', window.scrollY > 500);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // Reveal animations on scroll
   const revealTargets = document.querySelectorAll(

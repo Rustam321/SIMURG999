@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SIMURG — Торговая система</title>
+<meta name="description" content="SIMURG — интеллектуальная система управления международными торговыми сделками. B2Q, B2B, B2C платформа с полным циклом от запроса до исполнения.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -11,51 +12,47 @@
 </head>
 <body>
 
+<a href="#hero" class="skip-nav">Перейти к содержимому</a>
+
 <header class="header" id="header">
-  <div class="container header__inner">
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <nav class="nav" id="nav">
     <a href="#hero" class="logo">
-      <span class="logo__bar"></span>
-      <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+      <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
     </a>
-    <nav class="nav" id="nav">
-      <a href="#about" class="nav__link">О системе</a>
-      <a href="#modules" class="nav__link">Модули</a>
-      <a href="#cycle" class="nav__link">Цикл сделки</a>
-      <a href="#participants" class="nav__link">Участники</a>
-      <a href="#bank" class="nav__link">SIMURG-Банк</a>
-      <a href="#team" class="nav__link">Команда</a>
-      <a href="#contacts" class="nav__link">Контакты</a>
-    </nav>
-    <button class="burger" id="burger" aria-label="Открыть меню">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+    <a href="#about" class="nav__link">О системе</a>
+    <a href="#modules" class="nav__link">Модули</a>
+    <a href="#cycle" class="nav__link">Цикл сделки</a>
+    <a href="#participants" class="nav__link">Участники</a>
+    <a href="#bank" class="nav__link">SIMURG-Банк</a>
+    <a href="#team" class="nav__link">Команда</a>
+    <a href="#contacts" class="nav__link">Контакты</a>
+  </nav>
 </header>
 
 <main>
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero__bg hero__bg--placeholder"></div>
-    <div class="hero__overlay"></div>
-    <div class="container hero__inner">
-      <div class="hero__top">
-        <a href="#hero" class="logo">
-          <span class="logo__bar"></span>
-          <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
-        </a>
-      </div>
-
-      <div class="hero__title-block">
+    <img src="img/logo-phoenix.png" alt="" role="presentation" class="hero__phoenix">
+    <div class="hero__title-block">
+      <div class="container">
         <h1 class="hero__title">Торговая<br>система <span>SIMURG</span></h1>
         <p class="hero__subtitle">Интеллектуальные решения в трансграничной торговле</p>
       </div>
+    </div>
 
-      <div class="hero__content">
+    <div class="hero__main">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
         <div class="hero__left">
           <a href="#hero" class="logo logo--sm">
-            <span class="logo__bar"></span>
-            <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+            <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
           </a>
           <h2 class="hero__heading">Интеллектуальная система<br>управления международными сделками</h2>
           <div class="hero__divider"></div>
@@ -66,7 +63,7 @@
           </p>
           <div class="hero__actions">
             <a href="#about" class="btn btn--outline">
-              <span class="btn__icon">i</span>
+              <span class="btn__icon btn__icon--info"></span>
               О системе
             </a>
             <a href="#" class="btn btn--ghost">
@@ -77,9 +74,6 @@
               </span>
             </a>
           </div>
-        </div>
-        <div class="hero__right">
-          <img src="img/logo-phoenix.png" alt="Simurg Phoenix" class="hero__phoenix">
         </div>
       </div>
 
@@ -124,6 +118,7 @@
           <h3>GLOBAL CONNECT</h3>
           <p>Интеграция рынков, банков, товаров, логистики и регуляторов в единой системе SIMURG.</p>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -262,25 +257,25 @@
           <h4>ЗАПРОС</h4>
           <p>Формирование запроса на поставку или услугу</p>
         </div>
-        <span class="cycle__arrow">&raquo;</span>
+        <span class="cycle__arrow" aria-hidden="true">&raquo;</span>
         <div class="cycle__step">
           <span class="cycle__step-icon cycle__step-icon--analysis"></span>
           <h4>АНАЛИЗ</h4>
           <p>Анализ рынка и подбор оптимальных решений</p>
         </div>
-        <span class="cycle__arrow">&raquo;</span>
+        <span class="cycle__arrow" aria-hidden="true">&raquo;</span>
         <div class="cycle__step">
           <span class="cycle__step-icon cycle__step-icon--agreement"></span>
           <h4>СОГЛАСОВАНИЕ</h4>
           <p>Условия сделки и документы утверждаются</p>
         </div>
-        <span class="cycle__arrow">&raquo;</span>
+        <span class="cycle__arrow" aria-hidden="true">&raquo;</span>
         <div class="cycle__step">
           <span class="cycle__step-icon cycle__step-icon--execution"></span>
           <h4>ИСПОЛНЕНИЕ</h4>
           <p>Организация поставки и выполнение обязательств</p>
         </div>
-        <span class="cycle__arrow">&raquo;</span>
+        <span class="cycle__arrow" aria-hidden="true">&raquo;</span>
         <div class="cycle__step">
           <span class="cycle__step-icon cycle__step-icon--result"></span>
           <h4>РЕЗУЛЬТАТ</h4>
@@ -319,12 +314,12 @@
   </section>
 
   <!-- BUSINESS MODEL B2Q/B2B/B2C -->
-  <section class="business">
+  <section class="business" id="business">
+    <h2 class="visually-hidden">Бизнес-модель</h2>
     <div class="container business__inner">
       <div class="business__intro">
         <a href="#hero" class="logo">
-          <span class="logo__bar"></span>
-          <span class="logo__text"><strong>SIMURG</strong><small>TRADE INTELLIGENCE SYSTEM</small></span>
+          <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
         </a>
         <p>Мы выстраиваем эффективные связи между бизнесом, государством и потребителями, обеспечивая прозрачность, скорость и надёжность на каждом этапе международной торговли.</p>
       </div>
@@ -518,8 +513,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="contacts">
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="contacts">
     <div class="footer__map"></div>
     <div class="container footer__inner">
       <div class="footer__col">
@@ -540,9 +538,7 @@
         <p><span class="footer__icon footer__icon--mail"></span> E-MAIL: <a href="mailto:info@simurg.io">info@simurg.io</a></p>
       </div>
     </div>
-  </footer>
-
-</main>
+</footer>
 
 <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 

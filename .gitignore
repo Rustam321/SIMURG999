@@ -1,6 +1,7 @@
 .DS_Store
 *.DS_Store
 Thumbs.db
+.claude/
 /simurg999/img/site_*.jpeg
 /simurg999/img/p*_img*.jpeg
 *.log
