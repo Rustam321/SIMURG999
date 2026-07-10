@@ -817,12 +817,12 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 38px;
+  font-size: 76px;
   font-weight: 700;
   line-height: 1;
   color: #5db9ff;
   text-shadow: 0 0 14px rgba(80, 180, 255, 0.9), 0 0 30px rgba(61, 169, 252, 0.5);
-  padding: 0 4px;
+  padding: 0 2px;
   flex-shrink: 0;
 }
 
