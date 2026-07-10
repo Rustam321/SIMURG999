@@ -698,9 +698,10 @@ body.menu-open { overflow: hidden; }
 .cycle__role-icon--globe::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z'/%3E%3C/svg%3E"); }
 .cycle__role-icon--users::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E"); }
 
-/* Connector bus: a glowing dot under each role column, short vertical
-   stubs down to a horizontal rail, then one centre drop to the steps —
-   mirrors the "circuit" connector in the reference */
+/* Connector bus: glowing dots + vertical stubs down to a horizontal
+   rail, then a centre drop to the steps. Dot tiles and line tiles share
+   the same 12px width, so equal %-positions keep the dot centred on
+   the end of its line. */
 .cycle__line {
   height: 74px;
   margin: 6px 0 24px;
@@ -713,9 +714,9 @@ body.menu-open { overflow: hidden; }
   left: 0;
   right: 0;
   pointer-events: none;
+  filter: drop-shadow(0 0 4px rgba(80, 180, 255, 0.7));
 }
 .cycle__line::before {
-  /* four dots + four vertical stubs + horizontal rail */
   top: 0;
   height: 40px;
   background-image:
@@ -723,33 +724,30 @@ body.menu-open { overflow: hidden; }
     radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
     radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
     radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
-    linear-gradient(#5db9ff, #5db9ff),
-    linear-gradient(#5db9ff, #5db9ff),
-    linear-gradient(#5db9ff, #5db9ff),
-    linear-gradient(#5db9ff, #5db9ff),
+    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
     linear-gradient(rgba(93, 185, 255, 0.85), rgba(93, 185, 255, 0.85));
   background-size:
     12px 12px, 12px 12px, 12px 12px, 12px 12px,
-    2px 40px, 2px 40px, 2px 40px, 2px 40px,
+    12px 40px, 12px 40px, 12px 40px, 12px 40px,
     75% 2px;
   background-position:
     12.5% 0, 37.5% 0, 62.5% 0, 87.5% 0,
     12.5% 6px, 37.5% 6px, 62.5% 6px, 87.5% 6px,
     50% bottom;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 0 4px rgba(80, 180, 255, 0.7));
 }
 .cycle__line::after {
-  /* centre drop from the rail down to the steps, ending in a dot */
   top: 40px;
   height: 34px;
   background-image:
-    linear-gradient(rgba(93, 185, 255, 0.85), rgba(93, 185, 255, 0.35)),
+    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
     radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px);
-  background-size: 2px 34px, 12px 12px;
+  background-size: 12px 34px, 12px 12px;
   background-position: 50% top, 50% bottom;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 0 4px rgba(80, 180, 255, 0.7));
 }
 
 .cycle__steps {
