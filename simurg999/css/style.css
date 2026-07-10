@@ -641,7 +641,14 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    Cycle
    ========================================================================== */
-.cycle { position: relative; padding: 150px 0; }
+.cycle {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0;
+}
 
 .cycle .section-title { margin-bottom: 70px; }
 
