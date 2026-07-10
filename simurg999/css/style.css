@@ -641,7 +641,9 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    Cycle
    ========================================================================== */
-.cycle { position: relative; padding: 110px 0; }
+.cycle { position: relative; padding: 150px 0; }
+
+.cycle .section-title { margin-bottom: 70px; }
 
 .cycle__roles {
   display: grid;
@@ -693,8 +695,8 @@ body.menu-open { overflow: hidden; }
 /* Connector: single SVG — dots sit exactly on the line ends (shared
    coordinates), pulses travel from the top dots to the bottom one */
 .cycle__line {
-  height: 74px;
-  margin: 6px 0 24px;
+  height: 110px;
+  margin: 30px 0 48px;
 }
 .cycle__line svg {
   display: block;
@@ -723,36 +725,36 @@ body.menu-open { overflow: hidden; }
 .cycle__pulse--4 { animation: cyclePulse4 3.6s linear infinite 2.7s; }
 
 @keyframes cyclePulse1 {
-  0%   { cx: 12.5%; cy: 7px; opacity: 0; }
+  0%   { cx: 12.5%; cy: 8px; opacity: 0; }
   6%   { opacity: 1; }
-  32%  { cx: 12.5%; cy: 40px; }
-  72%  { cx: 50%; cy: 40px; }
-  94%  { cx: 50%; cy: 67px; opacity: 1; }
-  100% { cx: 50%; cy: 67px; opacity: 0; }
+  32%  { cx: 12.5%; cy: 58px; }
+  72%  { cx: 50%; cy: 58px; }
+  94%  { cx: 50%; cy: 102px; opacity: 1; }
+  100% { cx: 50%; cy: 102px; opacity: 0; }
 }
 @keyframes cyclePulse2 {
-  0%   { cx: 37.5%; cy: 7px; opacity: 0; }
+  0%   { cx: 37.5%; cy: 8px; opacity: 0; }
   6%   { opacity: 1; }
-  32%  { cx: 37.5%; cy: 40px; }
-  72%  { cx: 50%; cy: 40px; }
-  94%  { cx: 50%; cy: 67px; opacity: 1; }
-  100% { cx: 50%; cy: 67px; opacity: 0; }
+  32%  { cx: 37.5%; cy: 58px; }
+  72%  { cx: 50%; cy: 58px; }
+  94%  { cx: 50%; cy: 102px; opacity: 1; }
+  100% { cx: 50%; cy: 102px; opacity: 0; }
 }
 @keyframes cyclePulse3 {
-  0%   { cx: 62.5%; cy: 7px; opacity: 0; }
+  0%   { cx: 62.5%; cy: 8px; opacity: 0; }
   6%   { opacity: 1; }
-  32%  { cx: 62.5%; cy: 40px; }
-  72%  { cx: 50%; cy: 40px; }
-  94%  { cx: 50%; cy: 67px; opacity: 1; }
-  100% { cx: 50%; cy: 67px; opacity: 0; }
+  32%  { cx: 62.5%; cy: 58px; }
+  72%  { cx: 50%; cy: 58px; }
+  94%  { cx: 50%; cy: 102px; opacity: 1; }
+  100% { cx: 50%; cy: 102px; opacity: 0; }
 }
 @keyframes cyclePulse4 {
-  0%   { cx: 87.5%; cy: 7px; opacity: 0; }
+  0%   { cx: 87.5%; cy: 8px; opacity: 0; }
   6%   { opacity: 1; }
-  32%  { cx: 87.5%; cy: 40px; }
-  72%  { cx: 50%; cy: 40px; }
-  94%  { cx: 50%; cy: 67px; opacity: 1; }
-  100% { cx: 50%; cy: 67px; opacity: 0; }
+  32%  { cx: 87.5%; cy: 58px; }
+  72%  { cx: 50%; cy: 58px; }
+  94%  { cx: 50%; cy: 102px; opacity: 1; }
+  100% { cx: 50%; cy: 102px; opacity: 0; }
 }
 
 .cycle__steps {
