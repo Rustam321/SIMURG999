@@ -46,18 +46,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Reveal animations on scroll
+  // Reveal animations on scroll (staggered by position among siblings)
   const revealTargets = document.querySelectorAll(
-    '.feature-card, .module-row, .cycle__step, .about__item, .biz-card, .cat, .team-card, .country'
+    '.hero__left > *, .feature-card, .module-row, .cycle__role, .cycle__step, .about__item, .biz-card, .cat, .team-card, .country'
   );
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            const el = entry.target;
+            const group = [...el.parentElement.children].filter((c) => c.classList.contains('reveal'));
+            const delay = reduceMotion ? 0 : Math.max(0, group.indexOf(el)) * 90;
+            setTimeout(() => el.classList.add('is-visible'), delay);
+            observer.unobserve(el);
           }
         });
       },
