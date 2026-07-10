@@ -698,56 +698,69 @@ body.menu-open { overflow: hidden; }
 .cycle__role-icon--globe::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z'/%3E%3C/svg%3E"); }
 .cycle__role-icon--users::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E"); }
 
-/* Connector bus: glowing dots + vertical stubs down to a horizontal
-   rail, then a centre drop to the steps. Dot tiles and line tiles share
-   the same 12px width, so equal %-positions keep the dot centred on
-   the end of its line. */
+/* Connector: single SVG — dots sit exactly on the line ends (shared
+   coordinates), pulses travel from the top dots to the bottom one */
 .cycle__line {
   height: 74px;
   margin: 6px 0 24px;
-  position: relative;
 }
-.cycle__line::before,
-.cycle__line::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  filter: drop-shadow(0 0 4px rgba(80, 180, 255, 0.7));
+.cycle__line svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 4px rgba(80, 180, 255, 0.55));
 }
-.cycle__line::before {
-  top: 0;
-  height: 40px;
-  background-image:
-    radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
-    radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
-    radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
-    radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px),
-    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
-    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
-    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
-    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
-    linear-gradient(rgba(93, 185, 255, 0.85), rgba(93, 185, 255, 0.85));
-  background-size:
-    12px 12px, 12px 12px, 12px 12px, 12px 12px,
-    12px 40px, 12px 40px, 12px 40px, 12px 40px,
-    75% 2px;
-  background-position:
-    12.5% 0, 37.5% 0, 62.5% 0, 87.5% 0,
-    12.5% 6px, 37.5% 6px, 62.5% 6px, 87.5% 6px,
-    50% bottom;
-  background-repeat: no-repeat;
+.cycle__line-net line {
+  stroke: rgba(93, 185, 255, 0.85);
+  stroke-width: 2;
 }
-.cycle__line::after {
-  top: 40px;
-  height: 34px;
-  background-image:
-    linear-gradient(90deg, transparent calc(50% - 1px), #5db9ff calc(50% - 1px), #5db9ff calc(50% + 1px), transparent calc(50% + 1px)),
-    radial-gradient(circle, #cfeaff 0 2.5px, rgba(93, 185, 255, 0.6) 3px, transparent 5.5px);
-  background-size: 12px 34px, 12px 12px;
-  background-position: 50% top, 50% bottom;
-  background-repeat: no-repeat;
+.cycle__line-dots circle {
+  fill: #cfeaff;
+  stroke: rgba(93, 185, 255, 0.6);
+  stroke-width: 2;
+}
+.cycle__pulse {
+  fill: #eaf6ff;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #7cc4ff);
+}
+.cycle__pulse--1 { animation: cyclePulse1 3.6s linear infinite; }
+.cycle__pulse--2 { animation: cyclePulse2 3.6s linear infinite 0.9s; }
+.cycle__pulse--3 { animation: cyclePulse3 3.6s linear infinite 1.8s; }
+.cycle__pulse--4 { animation: cyclePulse4 3.6s linear infinite 2.7s; }
+
+@keyframes cyclePulse1 {
+  0%   { cx: 12.5%; cy: 7px; opacity: 0; }
+  6%   { opacity: 1; }
+  32%  { cx: 12.5%; cy: 40px; }
+  72%  { cx: 50%; cy: 40px; }
+  94%  { cx: 50%; cy: 67px; opacity: 1; }
+  100% { cx: 50%; cy: 67px; opacity: 0; }
+}
+@keyframes cyclePulse2 {
+  0%   { cx: 37.5%; cy: 7px; opacity: 0; }
+  6%   { opacity: 1; }
+  32%  { cx: 37.5%; cy: 40px; }
+  72%  { cx: 50%; cy: 40px; }
+  94%  { cx: 50%; cy: 67px; opacity: 1; }
+  100% { cx: 50%; cy: 67px; opacity: 0; }
+}
+@keyframes cyclePulse3 {
+  0%   { cx: 62.5%; cy: 7px; opacity: 0; }
+  6%   { opacity: 1; }
+  32%  { cx: 62.5%; cy: 40px; }
+  72%  { cx: 50%; cy: 40px; }
+  94%  { cx: 50%; cy: 67px; opacity: 1; }
+  100% { cx: 50%; cy: 67px; opacity: 0; }
+}
+@keyframes cyclePulse4 {
+  0%   { cx: 87.5%; cy: 7px; opacity: 0; }
+  6%   { opacity: 1; }
+  32%  { cx: 87.5%; cy: 40px; }
+  72%  { cx: 50%; cy: 40px; }
+  94%  { cx: 50%; cy: 67px; opacity: 1; }
+  100% { cx: 50%; cy: 67px; opacity: 0; }
 }
 
 .cycle__steps {
@@ -1456,4 +1469,5 @@ body.menu-open { overflow: hidden; }
     scroll-behavior: auto !important;
   }
   .reveal { opacity: 1; transform: none; }
+  .cycle__pulse { display: none; }
 }
