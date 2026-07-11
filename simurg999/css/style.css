@@ -574,8 +574,26 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    Modules
    ========================================================================== */
-.modules { position: relative; padding: 110px 0; }
-.modules .section-title { text-align: center; margin-bottom: 56px; }
+.modules { position: relative; padding: 0 0 110px; }
+
+/* Full-bleed city banner behind the heading — shown whole, no zoom */
+.modules__head {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 70px;
+  padding: 60px 20px 0;
+  background: url('../img/bg4.png?v=4') center top / 100% auto no-repeat;
+  aspect-ratio: 1622 / 460;
+}
+.modules__head .section-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8);
+}
 
 .module-row {
   display: grid;
