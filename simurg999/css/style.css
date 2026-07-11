@@ -583,9 +583,10 @@ body.menu-open { overflow: hidden; }
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 70px;
-  padding: 110px 20px 0;
-  background: url('../img/bg4.png?v=6') center top / 100% auto no-repeat;
-  aspect-ratio: 1690 / 531;
+  padding: 90px 20px 0;
+  background: url('../img/bg4.png?v=6') center center / 100% auto no-repeat;
+  aspect-ratio: 1690 / 400;
+  overflow: hidden;
 }
 .modules__head .section-title {
   position: relative;
