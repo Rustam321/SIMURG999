@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reveal animations on scroll (staggered by position among siblings)
   const revealTargets = document.querySelectorAll(
-    '.hero__left > *, .feature-card, .module-row, .cycle__role, .cycle__step, .about__item, .biz-card, .cat, .team-card, .country'
+    '.hero__left > *, .feature-card, .module-row, .cycle__role, .cycle__step, .about__item, .biz-card, .cat, .tcard, .country'
   );
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
