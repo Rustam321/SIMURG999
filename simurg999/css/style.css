@@ -973,20 +973,17 @@ body.menu-open { overflow: hidden; }
 .about__divider i:first-child { left: 0; }
 .about__divider i:last-child  { right: 0; }
 
-/* Framed banner header (скайлайн-фото добавим позже: заменить background
-   на url('../img/<skyline>') center/cover; заголовок уже лежит поверх) */
+/* Framed banner header: скайлайн trd.png (1690×529) на всю ширину,
+   слегка кропнут по вертикали (aspect-ratio ниже пропорции фото) */
 .about__head {
   position: relative;
-  display: flex; align-items: center; justify-content: center;
-  min-height: clamp(130px, 16vw, 205px);
+  display: flex; align-items: flex-start; justify-content: center;
+  aspect-ratio: 1690 / 420;
+  padding-top: 9%;
   margin: 12px 0;
   border-radius: 6px;
   overflow: hidden;
-  background:
-    radial-gradient(58% 60% at 50% 108%, rgba(36, 108, 220, 0.4), transparent 72%),
-    radial-gradient(30% 40% at 14% 100%, rgba(30, 90, 190, 0.3), transparent 75%),
-    radial-gradient(30% 40% at 86% 100%, rgba(30, 90, 190, 0.3), transparent 75%),
-    linear-gradient(180deg, #050b18 0%, #091731 62%, #061021 100%);
+  background: url('../img/trd.png?v=1') center / 100% auto no-repeat #050b18;
 }
 .about__title {
   font-family: var(--font-heading);
@@ -994,7 +991,6 @@ body.menu-open { overflow: hidden; }
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
-  transform: translateY(-14%);
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
 }
 .about__title span { color: var(--accent-blue); }
