@@ -973,86 +973,97 @@ body.menu-open { overflow: hidden; }
 .about__divider i:first-child { left: 0; }
 .about__divider i:last-child  { right: 0; }
 
-/* Framed banner header (скайлайн — заглушка, заменить bg на url('../img/<skyline>')) */
+/* Framed banner header (скайлайн-фото добавим позже: заменить background
+   на url('../img/<skyline>') center/cover; заголовок уже лежит поверх) */
 .about__head {
   position: relative;
   display: flex; align-items: center; justify-content: center;
-  min-height: clamp(150px, 19vw, 240px);
-  margin: 14px 0;
-  border-radius: 8px;
-  border: 1px solid rgba(61,169,252,.4);
+  min-height: clamp(130px, 16vw, 205px);
+  margin: 12px 0;
+  border-radius: 6px;
   overflow: hidden;
-  background: linear-gradient(180deg, #071322 0%, #0b1c34 55%, #05101e 100%);
-  box-shadow: inset 0 0 70px rgba(0,0,0,.55);
+  background:
+    radial-gradient(58% 60% at 50% 108%, rgba(36, 108, 220, 0.4), transparent 72%),
+    radial-gradient(30% 40% at 14% 100%, rgba(30, 90, 190, 0.3), transparent 75%),
+    radial-gradient(30% 40% at 86% 100%, rgba(30, 90, 190, 0.3), transparent 75%),
+    linear-gradient(180deg, #050b18 0%, #091731 62%, #061021 100%);
 }
 .about__title {
   font-family: var(--font-heading);
-  font-size: clamp(24px, 3.6vw, 46px);
+  font-size: clamp(24px, 3.2vw, 42px);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
-  text-shadow: 0 2px 20px rgba(0,0,0,.85);
+  transform: translateY(-14%);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
 }
 .about__title span { color: var(--accent-blue); }
 
-.about__list { display: flex; flex-direction: column; gap: 18px; margin-top: 22px; }
+.about__list { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
 
+/* ряд по референсу: сочная сине-королевская карточка,
+   заголовок | короткий светящийся коннектор | белый текст */
 .about-row {
   position: relative;
   display: grid;
-  grid-template-columns: 34% 1fr;
+  grid-template-columns: 30% 1fr;
   align-items: center;
-  min-height: 150px;
-  padding: 30px 40px;
-  border-radius: 14px;
-  border: 1px solid rgba(61,169,252,.35);
-  background: linear-gradient(90deg, #0a1730 0%, #081426 55%, #060f1f 100%);
-  box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 30px rgba(61,169,252,.04);
+  min-height: 140px;
+  padding: 28px 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(96, 162, 255, 0.4);
+  background: linear-gradient(96deg, #0a2149 0%, #0c2a5c 55%, #0e3470 100%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), inset 0 0 46px rgba(24, 84, 190, 0.28);
   overflow: hidden;
 }
-/* точечная сетка (заглушка вместо фон-картинки), проявляется справа */
+/* редкие светящиеся боке-точки справа (заглушка вместо фон-картинки) */
 .about-row::after {
   content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(circle, rgba(93,170,255,.22) 1px, transparent 1.6px) 0 0 / 24px 24px;
-  -webkit-mask-image: linear-gradient(90deg, transparent 42%, #000 100%);
-          mask-image: linear-gradient(90deg, transparent 42%, #000 100%);
-  opacity: .55;
+  background:
+    radial-gradient(circle at 88% 26%, rgba(150, 205, 255, 0.85) 0 2px, transparent 3.4px),
+    radial-gradient(circle at 95% 58%, rgba(150, 205, 255, 0.7) 0 2.4px, transparent 4px),
+    radial-gradient(circle at 79% 70%, rgba(150, 205, 255, 0.55) 0 1.8px, transparent 3px),
+    radial-gradient(circle at 70% 36%, rgba(150, 205, 255, 0.4) 0 1.5px, transparent 2.6px),
+    radial-gradient(circle at 84% 88%, rgba(150, 205, 255, 0.45) 0 1.5px, transparent 2.6px),
+    radial-gradient(circle at 60% 78%, rgba(150, 205, 255, 0.3) 0 1.3px, transparent 2.3px),
+    radial-gradient(150px 100px at 90% 42%, rgba(52, 122, 235, 0.3), transparent 70%),
+    radial-gradient(170px 120px at 70% 80%, rgba(52, 122, 235, 0.22), transparent 70%);
 }
-.about-row__head { position: relative; z-index: 1; padding-right: 40px; }
-.about-row__body { position: relative; z-index: 1; padding-left: 44px; }
+.about-row__head { position: relative; z-index: 1; padding-right: 34px; }
+.about-row__body { position: relative; z-index: 1; padding-left: 48px; }
 
 .about-row__title {
   font-family: var(--font-heading);
-  font-size: clamp(19px, 1.95vw, 26px);
+  font-size: clamp(19px, 1.8vw, 24px);
   font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 1.18;
-  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  line-height: 1.24;
+  color: #fff;
 }
-.about-row__title-sub    { font-size: 0.74em; font-weight: 700; letter-spacing: 0.04em; }
-.about-row__title-accent { font-size: 0.74em; font-weight: 700; letter-spacing: 0.04em; color: var(--accent-blue); }
+.about-row__title-sub    { font-weight: 700; }
+.about-row__title-accent { font-weight: 700; color: #3d9bff; }
 
-/* светящийся вертикальный коннектор между колонками, точка вверху */
+/* короткий светящийся коннектор: точка вверху, линия тает книзу */
 .about-row__conn {
   position: absolute;
-  left: 34%; top: 28px; bottom: 28px;
+  left: 30%; top: 26px; bottom: 32px;
   width: 2px; z-index: 2;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(93,185,255,.9) 0%, rgba(93,185,255,.5) 60%, rgba(93,185,255,.12));
+  background: linear-gradient(180deg, rgba(130, 195, 255, 0.95) 0%, rgba(130, 195, 255, 0.45) 65%, transparent 100%);
 }
 .about-row__conn::before {
   content: ''; position: absolute; left: 50%; top: 0; width: 9px; height: 9px;
-  transform: translate(-50%,-50%); border-radius: 50%;
-  background: #cfeaff; box-shadow: 0 0 10px 2px rgba(93,185,255,.9);
+  transform: translate(-50%, -50%); border-radius: 50%;
+  background: #eaf6ff; box-shadow: 0 0 11px 3px rgba(120, 190, 255, 0.95);
 }
 
 .about-row__body p {
-  font-size: clamp(14px, 1.15vw, 16.5px);
-  color: #c4d3ea;
-  line-height: 1.6;
+  font-size: clamp(14.5px, 1.2vw, 17px);
+  color: #f4f8ff;
+  line-height: 1.55;
 }
 .about-row__body p + p { margin-top: 10px; }
-.about-row__body strong { color: var(--text-primary); font-weight: 700; }
+.about-row__body strong { color: #fff; font-weight: 700; }
 
 /* ==========================================================================
    Business B2Q/B2B/B2C
