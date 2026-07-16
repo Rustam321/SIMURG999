@@ -1216,6 +1216,7 @@ body.menu-open { overflow: hidden; }
   inset: 0;
   background:
     radial-gradient(ellipse 640px 420px at 88% 4%, rgba(37, 99, 235, 0.22), transparent 65%),
+    linear-gradient(rgba(1, 5, 14, 0.5), rgba(1, 5, 14, 0.5)),
     url('../img/pexels.jpg?v=1') center / cover no-repeat;
   pointer-events: none;
 }
