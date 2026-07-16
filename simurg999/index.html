@@ -471,47 +471,109 @@
 
   <!-- SIMURG BANK -->
   <section class="bank" id="bank">
-    <div class="bank__bg bank__bg--placeholder"></div>
-    <div class="bank__overlay"></div>
     <div class="container">
-      <div class="bank__top">
-        <div class="bank__logo-row">
-          <span class="bank__icon"></span>
-          <div>
-            <h3>SIMURG-БАНК</h3>
-            <small>ФИНАНСОВАЯ ИНФРАСТРУКТУРА ДЛЯ ГЛОБАЛЬНОЙ ТОРГОВЛИ</small>
-          </div>
+      <header class="bank__head">
+        <div class="bank__brand">
+          <span class="bank__brand-ic" aria-hidden="true"></span>
+          <span class="bank__brand-name">SIMURG</span>
         </div>
+        <h2 class="bank__title">SIMURG-БАНК</h2>
+        <span class="bank__rule" aria-hidden="true"></span>
+        <p class="bank__subtitle">Финансовая инфраструктура для глобальной торговли</p>
+      </header>
+
+      <div class="bank__row">
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--pay" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Расчеты</h3>
+          <ul class="bank-card__list">
+            <li>Международные платежи</li>
+            <li>Мультивалютные счета</li>
+            <li>Быстрые и безопасные расчеты</li>
+          </ul>
+        </article>
+
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--fin" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Финансирование</h3>
+          <ul class="bank-card__list">
+            <li>Торговое финансирование</li>
+            <li>Аккредитивы</li>
+            <li>Гарантии</li>
+            <li>Факторинг</li>
+          </ul>
+        </article>
+
+        <div class="bank-core">
+          <span class="bank-core__stem bank-core__stem--top" aria-hidden="true"></span>
+          <div class="bank-core__ring">
+            <span class="bank-core__dot bank-core__dot--l" aria-hidden="true"></span>
+            <span class="bank-core__dot bank-core__dot--r" aria-hidden="true"></span>
+            <span class="bank-core__emblem" aria-hidden="true"></span>
+            <span class="bank-core__name">SIMURG</span>
+            <span class="bank-core__tag">БАНК</span>
+            <p class="bank-core__desc">Финансовый центр глобальных сделок</p>
+          </div>
+          <span class="bank-core__stem bank-core__stem--bottom" aria-hidden="true"></span>
+        </div>
+
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--risk" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Управление рисками</h3>
+          <ul class="bank-card__list">
+            <li>Валютные риски</li>
+            <li>Страновые риски</li>
+            <li>Кредитные риски</li>
+            <li>Страхование</li>
+          </ul>
+        </article>
+
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--cap" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Капитал</h3>
+          <ul class="bank-card__list">
+            <li>Структурирование сделок</li>
+            <li>Инвестиционные решения</li>
+            <li>Управление активами</li>
+            <li>Совместные проекты</li>
+          </ul>
+        </article>
       </div>
 
-      <div class="bank__grid">
-        <div class="bank__left">
-          <h2>ВЭБ-ПОРТАЛ<br><span>TRADE OFFICER</span></h2>
-          <h4>ЛИЧНЫЙ КАБИНЕТ</h4>
-          <p>Единая цифровая платформа для управления международной торговлей, взаимодействия с партнёрами и контроля всех операций в режиме реального времени.</p>
-          <a href="#" class="btn btn--outline-blue">
-            <span class="btn__icon btn__icon--user"></span>
-            ВОЙТИ В СИСТЕМУ →
-          </a>
-        </div>
-
-        <div class="bank__right">
-          <h4>УЧАСТНИКИ И TRADE OFFICER ПО СТРАНАМ</h4>
-          <div class="countries">
-            <a href="#" class="country"><span class="flag flag--ru"></span>РОССИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--by"></span>БЕЛАРУСЬ →</a>
-            <a href="#" class="country"><span class="flag flag--kz"></span>КАЗАХСТАН →</a>
-            <a href="#" class="country"><span class="flag flag--cn"></span>КИТАЙ →</a>
-            <a href="#" class="country"><span class="flag flag--hk"></span>САР ГОНКОНГ →</a>
-            <a href="#" class="country"><span class="flag flag--sg"></span>СИНГАПУР →</a>
-            <a href="#" class="country"><span class="flag flag--ch"></span>ШВЕЙЦАРИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--bg"></span>БОЛГАРИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--mk"></span>СЕВЕРНАЯ МАКЕДОНИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--bh"></span>КОРОЛЕВСТВО БАХРЕЙН →</a>
-            <a href="#" class="country"><span class="flag flag--sa"></span>САУДОВСКАЯ АРАВИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--tr"></span>ТУРЦИЯ →</a>
+      <ul class="bank__feats">
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--safe" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Надежно</h4>
+            <p>Безопасность и комплаенс</p>
           </div>
-        </div>
+        </li>
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--fast" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Быстро</h4>
+            <p>Оперативные решения</p>
+          </div>
+        </li>
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--globe" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Глобально</h4>
+            <p>Работаем в любой точке мира</p>
+          </div>
+        </li>
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--eff" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Эффективно</h4>
+            <p>Оптимизация затрат и результат</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="bank__tagline">
+        <span class="bank__tagline-ic" aria-hidden="true"></span>
+        <p>SIMURG-БАНК — <span>ядро финансовой логистики</span> SIMURG</p>
       </div>
     </div>
   </section>
