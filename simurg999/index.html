@@ -23,12 +23,12 @@
     <a href="#hero" class="logo">
       <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
     </a>
-    <a href="#about" class="nav__link">О системе</a>
     <a href="#cycle" class="nav__link">Цикл сделки</a>
     <a href="#modules" class="nav__link">Модули</a>
-    <a href="#participants" class="nav__link">Участники</a>
-    <a href="#bank" class="nav__link">SIMURG-Банк</a>
     <a href="#team" class="nav__link">Команда</a>
+    <a href="#bank" class="nav__link">SIMURG-Банк</a>
+    <a href="#about" class="nav__link">О системе</a>
+    <a href="#participants" class="nav__link">Участники</a>
     <a href="#contacts" class="nav__link">Контакты</a>
   </nav>
 </header>
@@ -215,27 +215,26 @@
 
   <!-- OPERATIONAL MODULES -->
   <section class="modules" id="modules">
-    <div class="modules__bg modules__bg--placeholder"></div>
-    <div class="modules__overlay"></div>
+    <div class="modules__head">
+      <h2 class="section-title section-title--center">Операционные<br><span>модули логистики</span></h2>
+    </div>
     <div class="container">
-      <h2 class="section-title">Операционные<br><span>модули логистики</span></h2>
-
-      <div class="module-row">
-        <div class="module-row__info module-row__info--blue">
+      <div class="module-row reveal">
+        <div class="module-row__info">
           <h3>RISK <span>ENGINE</span></h3>
           <p>Система управления рисками на основе данных и технологий для выявления, оценки и снижения потенциальных угроз на всех этапах цепочки поставок.</p>
         </div>
         <div class="module-row__items">
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--shield"></span>
+            <span class="module-item__icon module-item__icon--shield-check"></span>
             <p>Идентификация и оценка рисков</p>
           </div>
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--pulse"></span>
+            <span class="module-item__icon module-item__icon--monitor-pulse"></span>
             <p>Мониторинг и раннее оповещение</p>
           </div>
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--scales"></span>
+            <span class="module-item__icon module-item__icon--brain"></span>
             <p>Аналитика и прогнозирование рисков</p>
           </div>
           <div class="module-item">
@@ -243,20 +242,19 @@
             <p>Управление и снижение рисков</p>
           </div>
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--clipboard"></span>
+            <span class="module-item__icon module-item__icon--clipboard-check"></span>
             <p>Отчётность и контроль соответствия</p>
           </div>
         </div>
       </div>
-
-      <div class="module-row">
-        <div class="module-row__info module-row__info--green">
-          <h3>АНАЛИТИКА И <span>МАРКЕТИНГ</span></h3>
+      <div class="module-row reveal">
+        <div class="module-row__info">
+          <h3>АНАЛИТИКА<br><span>И МАРКЕТИНГ</span></h3>
           <p>Данные, инсайты и стратегии для роста продаж, эффективного продвижения и укрепления конкурентных позиций на рынке.</p>
         </div>
         <div class="module-row__items">
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--bars"></span>
+            <span class="module-item__icon module-item__icon--bars-axis"></span>
             <p>Анализ рынков и конкурентной среды</p>
           </div>
           <div class="module-item">
@@ -264,7 +262,7 @@
             <p>Сегментация и анализ целевой аудитории</p>
           </div>
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--pulse"></span>
+            <span class="module-item__icon module-item__icon--chart-frame"></span>
             <p>Оценка эффективности каналов и рекламных кампаний</p>
           </div>
           <div class="module-item">
@@ -272,39 +270,307 @@
             <p>Разработка стратегий продвижения и брендинга</p>
           </div>
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--target"></span>
+            <span class="module-item__icon module-item__icon--target-arrow"></span>
             <p>Прогнозирование спроса и анализ трендов</p>
           </div>
         </div>
       </div>
-
-      <div class="module-row">
-        <div class="module-row__info module-row__info--purple">
-          <h3>ТОРГОВАЯ <span>ЛОГИСТИКА</span></h3>
-          <p>Организация и контроль поставок, документооборота и взаимодействия со всеми участниками цепочки.</p>
+      <div class="module-row reveal">
+        <div class="module-row__info">
+          <h3>ТОРГОВАЯ<br><span>ЛОГИСТИКА</span></h3>
+          <p>Эффективное управление торговыми потоками от поиска поставщиков до доставки товара конечному получателю с минимизацией затрат и максимизацией прибыли.</p>
         </div>
         <div class="module-row__items">
           <div class="module-item">
-            <span class="module-item__icon module-item__icon--shield"></span>
-            <p>Управление поставками и маршрутизация</p>
-          </div>
-          <div class="module-item">
-            <span class="module-item__icon module-item__icon--clipboard"></span>
-            <p>Документооборот и таможенное оформление</p>
-          </div>
-          <div class="module-item">
-            <span class="module-item__icon module-item__icon--pulse"></span>
-            <p>Контроль сроков и статусов поставок</p>
-          </div>
-          <div class="module-item">
-            <span class="module-item__icon module-item__icon--sliders"></span>
-            <p>Координация с перевозчиками и складами</p>
-          </div>
-          <div class="module-item">
             <span class="module-item__icon module-item__icon--globe"></span>
-            <p>Глобальное отслеживание грузов</p>
+            <p>Поиск поставщиков и партнёров</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--handshake"></span>
+            <p>Сопровождение сделок и контрактов</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--package"></span>
+            <p>Управление заказами и поставками</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--chart-growth"></span>
+            <p>Оптимизация затрат и маржинальности</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--clipboard-check"></span>
+            <p>Контроль качества и соблюдение стандартов</p>
           </div>
         </div>
+      </div>
+      <div class="module-row reveal">
+        <div class="module-row__info">
+          <h3>ТРАНСПОРТНАЯ<br><span>ЛОГИСТИКА</span></h3>
+          <p>Организация доставки грузов любым видом транспорта с учётом сроков, стоимости и требований безопасности.</p>
+        </div>
+        <div class="module-row__items">
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--truck"></span>
+            <p>Планирование маршрутов и перевозок</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--plane"></span>
+            <p>Выбор оптимального вида транспорта</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--pin"></span>
+            <p>Отслеживание и контроль перевозок</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--shield-check"></span>
+            <p>Обеспечение безопасности грузов</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--file-lines"></span>
+            <p>Документальное сопровождение перевозок</p>
+          </div>
+        </div>
+      </div>
+      <div class="module-row reveal">
+        <div class="module-row__info">
+          <h3>ТАМОЖЕННАЯ<br><span>ЛОГИСТИКА</span></h3>
+          <p>Комплексное сопровождение грузов через таможенные границы с минимизацией риска, соблюдением законодательства и оптимизацией сроков и затрат.</p>
+        </div>
+        <div class="module-row__items">
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--stamp"></span>
+            <p>Таможенное оформление и декларирование</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--doc-search"></span>
+            <p>Классификация товара и определение ТН ВЭД</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--calculator"></span>
+            <p>Расчёт платежей и оптимизация таможенных затрат</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--shield-check"></span>
+            <p>Оценка рисков и минимизация штрафов</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--globe-check"></span>
+            <p>Международное соответствие и сертификация</p>
+          </div>
+        </div>
+      </div>
+      <div class="module-row reveal">
+        <div class="module-row__info">
+          <h3>ФИНАНСОВАЯ<br><span>ЛОГИСТИКА</span></h3>
+          <p>Оптимизация финансовых потоков и инструментов для обеспечения ликвидности, снижения издержек и повышения эффективности бизнеса.</p>
+        </div>
+        <div class="module-row__items">
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--dollar-coin"></span>
+            <p>Управление денежными потоками</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--banknotes"></span>
+            <p>Финансирование и кредитные решения</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--percent"></span>
+            <p>Оптимизация затрат и повышение рентабельности</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--money-target"></span>
+            <p>Управление финансовыми рисками</p>
+          </div>
+          <div class="module-item">
+            <span class="module-item__icon module-item__icon--bars-trend"></span>
+            <p>Финансовая отчётность и аналитика</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="container">
+      <h2 class="section-title">ИНФОРМАЦИОННАЯ ЛОГИСТИКА -<br><span>В ТОРГОВОЙ СИСТЕМЕ SIMURG-БАНК</span></h2>
+      <p class="team__desc">Комплексное решение для бизнес-продуктов сегментов <strong>B2Q, B2B, B2C</strong> в глобальной торговле на платформе <strong>SIMURG-БАНК</strong>.</p>
+
+      <div class="team__grid">
+        <article class="tcard reveal">
+          <div class="tcard__photo"><img src="img/team-1.jpg" alt="Evgeniy Gurkin"></div>
+          <div class="tcard__info">
+            <span class="tcard__conn" aria-hidden="true"></span>
+            <div class="tcard__brand">
+              <span class="tcard__emblem" aria-hidden="true"><img src="img/ico.png" alt=""></span>
+              <span class="tcard__tag">INFORMATIONAL LOGISTICS</span>
+            </div>
+            <h4 class="tcard__name">EVGENIY <span>GURKIN</span></h4>
+            <p class="tcard__role">Director of Information<br>and Financial Logistics</p>
+            <a href="#" class="tcard__btn">
+              <span class="tcard__btn-ic" aria-hidden="true"></span>
+              <span class="tcard__btn-label">PERSONAL ACCOUNT</span>
+              <span class="tcard__btn-chev" aria-hidden="true"></span>
+            </a>
+          </div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__photo"><img src="img/team-2.jpg" alt="Raphael Wu"></div>
+          <div class="tcard__info">
+            <span class="tcard__conn" aria-hidden="true"></span>
+            <div class="tcard__brand">
+              <span class="tcard__emblem" aria-hidden="true"><img src="img/ico.png" alt=""></span>
+              <span class="tcard__tag">INFORMATIONAL LOGISTICS</span>
+            </div>
+            <h4 class="tcard__name">RAPHAEL <span>WU</span></h4>
+            <p class="tcard__role">Head of Operational Control<br>and Financial Events</p>
+            <a href="#" class="tcard__btn">
+              <span class="tcard__btn-ic" aria-hidden="true"></span>
+              <span class="tcard__btn-label">PERSONAL ACCOUNT</span>
+              <span class="tcard__btn-chev" aria-hidden="true"></span>
+            </a>
+          </div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__photo"><img src="img/team-3.jpg" alt="Marina Panasovska"></div>
+          <div class="tcard__info">
+            <span class="tcard__conn" aria-hidden="true"></span>
+            <div class="tcard__brand">
+              <span class="tcard__emblem" aria-hidden="true"><img src="img/ico.png" alt=""></span>
+              <span class="tcard__tag">INFORMATIONAL LOGISTICS</span>
+            </div>
+            <h4 class="tcard__name">MARINA <span>PANASOVSKA</span></h4>
+            <p class="tcard__role">Director of Deal Execution,<br>Risk and Compliance</p>
+            <a href="#" class="tcard__btn">
+              <span class="tcard__btn-ic" aria-hidden="true"></span>
+              <span class="tcard__btn-label">PERSONAL ACCOUNT</span>
+              <span class="tcard__btn-chev" aria-hidden="true"></span>
+            </a>
+          </div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__photo"><img src="img/team-4.jpg" alt="Nikita Semkovsky"></div>
+          <div class="tcard__info">
+            <span class="tcard__conn" aria-hidden="true"></span>
+            <div class="tcard__brand">
+              <span class="tcard__emblem" aria-hidden="true"><img src="img/ico.png" alt=""></span>
+              <span class="tcard__tag">INFORMATIONAL LOGISTICS</span>
+            </div>
+            <h4 class="tcard__name">NIKITA <span>SEMKOVSKY</span></h4>
+            <p class="tcard__role">Director of Analytics<br>and Data Intelligence</p>
+            <a href="#" class="tcard__btn">
+              <span class="tcard__btn-ic" aria-hidden="true"></span>
+              <span class="tcard__btn-label">PERSONAL ACCOUNT</span>
+              <span class="tcard__btn-chev" aria-hidden="true"></span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMURG BANK -->
+  <section class="bank" id="bank">
+    <div class="container">
+      <header class="bank__head">
+        <img class="bank__brand" src="img/logotextBank.png" alt="SIMURG">
+        <h2 class="bank__title">SIMURG-БАНК</h2>
+        <span class="bank__rule" aria-hidden="true"></span>
+        <p class="bank__subtitle">Финансовая инфраструктура для глобальной торговли</p>
+      </header>
+
+      <div class="bank__row">
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--pay" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Расчеты</h3>
+          <ul class="bank-card__list">
+            <li>Международные платежи</li>
+            <li>Мультивалютные счета</li>
+            <li>Быстрые и безопасные расчеты</li>
+          </ul>
+        </article>
+
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--fin" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Финансирование</h3>
+          <ul class="bank-card__list">
+            <li>Торговое финансирование</li>
+            <li>Аккредитивы</li>
+            <li>Гарантии</li>
+            <li>Факторинг</li>
+          </ul>
+        </article>
+
+        <div class="bank-core">
+          <span class="bank-core__stem bank-core__stem--top" aria-hidden="true"></span>
+          <div class="bank-core__ring">
+            <span class="bank-core__dot bank-core__dot--l" aria-hidden="true"></span>
+            <span class="bank-core__dot bank-core__dot--r" aria-hidden="true"></span>
+            <img class="bank-core__emblem" src="img/logoBank.png" alt="" aria-hidden="true">
+            <span class="bank-core__name">SIMURG</span>
+            <span class="bank-core__tag">БАНК</span>
+            <p class="bank-core__desc">Финансовый центр глобальных сделок</p>
+          </div>
+          <span class="bank-core__stem bank-core__stem--bottom" aria-hidden="true"></span>
+        </div>
+
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--risk" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Управление рисками</h3>
+          <ul class="bank-card__list">
+            <li>Валютные риски</li>
+            <li>Страновые риски</li>
+            <li>Кредитные риски</li>
+            <li>Страхование</li>
+          </ul>
+        </article>
+
+        <article class="bank-card">
+          <span class="bank-card__icon bank-card__icon--cap" aria-hidden="true"></span>
+          <h3 class="bank-card__title">Капитал</h3>
+          <ul class="bank-card__list">
+            <li>Структурирование сделок</li>
+            <li>Инвестиционные решения</li>
+            <li>Управление активами</li>
+            <li>Совместные проекты</li>
+          </ul>
+        </article>
+      </div>
+
+      <ul class="bank__feats">
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--safe" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Надежно</h4>
+            <p>Безопасность и комплаенс</p>
+          </div>
+        </li>
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--fast" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Быстро</h4>
+            <p>Оперативные решения</p>
+          </div>
+        </li>
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--globe" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Глобально</h4>
+            <p>Работаем в любой точке мира</p>
+          </div>
+        </li>
+        <li class="bank-feat">
+          <span class="bank-feat__icon bank-feat__icon--eff" aria-hidden="true"></span>
+          <div class="bank-feat__text">
+            <h4>Эффективно</h4>
+            <p>Оптимизация затрат и результат</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="bank__tagline">
+        <span class="bank__tagline-ic" aria-hidden="true"></span>
+        <p>SIMURG-БАНК — <span>ядро финансовой логистики</span> SIMURG</p>
       </div>
     </div>
   </section>
@@ -440,103 +706,6 @@
       </aside>
     </div>
   </section>
-
-  <!-- SIMURG BANK -->
-  <section class="bank" id="bank">
-    <div class="bank__bg bank__bg--placeholder"></div>
-    <div class="bank__overlay"></div>
-    <div class="container">
-      <div class="bank__top">
-        <div class="bank__logo-row">
-          <span class="bank__icon"></span>
-          <div>
-            <h3>SIMURG-БАНК</h3>
-            <small>ФИНАНСОВАЯ ИНФРАСТРУКТУРА ДЛЯ ГЛОБАЛЬНОЙ ТОРГОВЛИ</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="bank__grid">
-        <div class="bank__left">
-          <h2>ВЭБ-ПОРТАЛ<br><span>TRADE OFFICER</span></h2>
-          <h4>ЛИЧНЫЙ КАБИНЕТ</h4>
-          <p>Единая цифровая платформа для управления международной торговлей, взаимодействия с партнёрами и контроля всех операций в режиме реального времени.</p>
-          <a href="#" class="btn btn--outline-blue">
-            <span class="btn__icon btn__icon--user"></span>
-            ВОЙТИ В СИСТЕМУ →
-          </a>
-        </div>
-
-        <div class="bank__right">
-          <h4>УЧАСТНИКИ И TRADE OFFICER ПО СТРАНАМ</h4>
-          <div class="countries">
-            <a href="#" class="country"><span class="flag flag--ru"></span>РОССИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--by"></span>БЕЛАРУСЬ →</a>
-            <a href="#" class="country"><span class="flag flag--kz"></span>КАЗАХСТАН →</a>
-            <a href="#" class="country"><span class="flag flag--cn"></span>КИТАЙ →</a>
-            <a href="#" class="country"><span class="flag flag--hk"></span>САР ГОНКОНГ →</a>
-            <a href="#" class="country"><span class="flag flag--sg"></span>СИНГАПУР →</a>
-            <a href="#" class="country"><span class="flag flag--ch"></span>ШВЕЙЦАРИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--bg"></span>БОЛГАРИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--mk"></span>СЕВЕРНАЯ МАКЕДОНИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--bh"></span>КОРОЛЕВСТВО БАХРЕЙН →</a>
-            <a href="#" class="country"><span class="flag flag--sa"></span>САУДОВСКАЯ АРАВИЯ →</a>
-            <a href="#" class="country"><span class="flag flag--tr"></span>ТУРЦИЯ →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section class="team" id="team">
-    <div class="container">
-      <h2 class="section-title">ИНФОРМАЦИОННАЯ ЛОГИСТИКА -<br><span>В ТОРГОВОЙ СИСТЕМЕ SIMURG-БАНК</span></h2>
-      <p class="team__desc">Комплексное решение для бизнес-продуктов сегментов <strong>B2Q, B2B, B2C</strong> в глобальной торговле на платформе <strong>SIMURG-БАНК</strong>.</p>
-
-      <div class="team__grid">
-        <div class="team-card">
-          <div class="team-card__photo team-card__photo--1" style="background-image:url('img/team1.jpeg')"></div>
-          <div class="team-card__body">
-            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
-            <h4>EVGENIY <span>GURKIN</span></h4>
-            <p>Director of Information and Financial Logistics</p>
-            <small>EAEU</small>
-            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-card__photo team-card__photo--2" style="background-image:url('img/team2.jpeg')"></div>
-          <div class="team-card__body">
-            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
-            <h4>RAPHAEL <span>WU</span></h4>
-            <p>Head of Operational Control and Financial Events</p>
-            <small>📍 Hong Kong — China</small>
-            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-card__photo team-card__photo--3" style="background-image:url('img/team3.jpeg')"></div>
-          <div class="team-card__body">
-            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
-            <h4>MARINA <span>PANASOVSKA</span></h4>
-            <p>Director of Deal Execution, Risk and Compliance</p>
-            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-card__photo team-card__photo--4" style="background-image:url('img/team4.jpeg')"></div>
-          <div class="team-card__body">
-            <span class="team-card__tag">⚜ INFORMATIONAL LOGISTICS</span>
-            <h4>NIKITA <span>SEMKOVSKY</span></h4>
-            <p>Director of Analytics and Data Intelligence</p>
-            <a href="#" class="team-card__link">👤 PERSONAL ACCOUNT →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
 </main>
 
