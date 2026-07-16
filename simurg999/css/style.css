@@ -1224,22 +1224,10 @@ body.menu-open { overflow: hidden; }
 /* шапка */
 .bank__head { text-align: center; margin-bottom: 56px; }
 .bank__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-.bank__brand-ic {
-  width: 32px; height: 26px;
-  background: #fff;
-  -webkit-mask: url('../img/ico.png') center / contain no-repeat;
-          mask: url('../img/ico.png') center / contain no-repeat;
-}
-.bank__brand-name {
-  font-family: var(--font-heading);
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  display: block;
+  height: clamp(38px, 3.4vw, 50px);
+  width: auto;
+  margin: 0 auto 14px;
 }
 .bank__title {
   font-family: var(--font-heading);
@@ -1400,11 +1388,9 @@ body.menu-open { overflow: hidden; }
 .bank-core__dot--l { left: 0; }
 .bank-core__dot--r { left: 100%; }
 .bank-core__emblem {
-  width: 62px; height: 52px;
-  margin-bottom: 10px;
-  background: var(--accent-blue);
-  -webkit-mask: url('../img/ico.png') center / contain no-repeat;
-          mask: url('../img/ico.png') center / contain no-repeat;
+  width: 86px;
+  height: auto;
+  margin-bottom: 12px;
 }
 .bank-core__name {
   font-family: var(--font-heading);
