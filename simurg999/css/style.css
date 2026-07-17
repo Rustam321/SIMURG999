@@ -1372,15 +1372,14 @@ body.menu-open { overflow: hidden; }
   .participants__footer h4 { font-size: 15px; letter-spacing: 0.04em; }
   .participants__footer p { font-size: 13px; padding-left: 18px; }
 }
+/* без круглой подложки: сам глобус ×1.5 (24 → 36px), маска на всю коробку */
 .participants__footer-icon {
-  width: 48px; height: 48px; flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--accent-blue-soft);
+  width: 36px; height: 36px; flex-shrink: 0;
   position: relative;
 }
 .participants__footer-icon::before {
   content: "";
-  position: absolute; inset: 12px;
+  position: absolute; inset: 0;
   background: var(--accent-blue);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z'/%3E%3C/svg%3E");
