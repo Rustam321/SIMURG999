@@ -649,11 +649,16 @@
   <section class="business" id="business">
     <h2 class="visually-hidden">Бизнес-модель</h2>
     <div class="container business__inner">
-      <div class="business__intro">
-        <a href="#hero" class="logo">
-          <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
-        </a>
-        <p>Мы выстраиваем эффективные связи между бизнесом, государством и потребителями, обеспечивая прозрачность, скорость и надёжность на каждом этапе международной торговли.</p>
+      <div class="business__head">
+        <div class="business__intro">
+          <a href="#hero" class="logo">
+            <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
+          </a>
+          <p>Мы выстраиваем эффективные связи между бизнесом, государством и потребителями, обеспечивая прозрачность, скорость и надёжность на каждом этапе международной торговли.</p>
+        </div>
+        <div class="business__globe" id="companyGlobe">
+          <canvas id="companyGlobeCanvas"></canvas>
+        </div>
       </div>
       <div class="business__cards">
         <div class="biz-card biz-card--blue">
@@ -795,5 +800,7 @@
 <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 
 <script src="js/main.js"></script>
+<script src="js/d3.min.js" defer></script>
+<script src="js/company-globe.js" defer></script>
 </body>
 </html>

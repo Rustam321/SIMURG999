@@ -26,6 +26,12 @@
 
 ## Хронология (свежее — сверху)
 
+**Правки 2026-07-17 (глобус, плашка, фоны):**
+- **Интерактивный d3-глобус** в BUSINESS (перенесён из `/Documents/simurg2`): `js/company-globe.js` (вращающийся wireframe с точками-континентами, drag мышью). Зависимости ВЕНДОРЕНЫ локально, чтобы не зависеть от CDN/GitHub: `js/d3.min.js` (273KB, d3 v7.9) + гео-данные `data/ne_110m_land.json` (231KB, natural-earth 110m land) — в JS `fetch` переписан с raw.githubusercontent на `data/ne_110m_land.json`. Разметка: `.business__head` (flex) = `.business__intro` + `.business__globe#companyGlobe > canvas#companyGlobeCanvas` (380px, ≤860 → 300px под текстом). ID менять нельзя — по ним ищет JS. Скрипты подключены в конце index.html с `defer`. CSS-заглушка `.business::before` (глоу-узлы) удалена.
+- **Панель UЧАСТНИКИ**: фон-заглушка заменена на скайлайн `img/trd.png` (тот же, что в ABOUT) — `.participants__main::before`, `center 68%/cover` + затемнение слева, mask-фейд книзу.
+- **Плашка «SIMURG объединяет партнёров»**: на ПК всегда в одну строку — `flex-wrap: nowrap` + `white-space: nowrap` у h4/p + шрифты на `clamp` (h4 11–14.5px, p 9.5–12px). Иконка ×1.5: 32→48px (inset ::before 8→12px). На ≤860 возвращается перенос (`flex-wrap: wrap`, `white-space: normal`, у p убран border-left).
+- **SIMURG-БАНК**: фото-фон (звёздное небо) удалён — чистый `#030916`.
+
 **Секция PARTICIPANTS «Участники SIMURG в Республике Беларусь» — переверстана по листу 6 PDF «Сайт.pdf»:**
 - `.participants__main` — единая тёмная панель: сверху глоу-заглушка города (`::before` с mask-fade; **фото Минска пользователь пришлёт** — заменить background на `url('../img/<minsk>.jpg') center/cover`), снизу волна из точек (`::after`, radial-dots 14px grid + radial-mask).
 - Шапка: флаг Беларуси 96×64 (CSS исправлен: красный 2/3 + зелёный 1/3 + белая полоса слева 11%) + заголовок clamp 20–27px.
@@ -65,7 +71,7 @@
 - **Ряд фич** (`.bank-feat`): `align-items: flex-start`→**`center`** (иконка по центру вертикали слева от текста). Текст крупнее: h4 17→**19px**, p 11.5→**13px** (max-width 175→195).
 - Источники SVG лежат в `img/` (bank-svgrepo-com (2), security-svgrepo-com, globe-2-svgrepo-com) — не используются напрямую (инлайн в CSS), хранятся для справки.
 - Логотипы — картинки пользователя: над заголовком `img/logotextBank.png` (1094×309, крылья+SIMURG, `<img class="bank__brand">`, height clamp 38–50px); в круге над словом SIMURG `img/logoBank.png` (865×520, крылья, `<img class="bank-core__emblem">`, width 86px). Маски из ico.png убраны.
-- Фон: звёздное небо `img/pexels.jpg` (6250×3458, ~3.4MB, база ≈ #020f1f) через `.bank::before` `center/cover`, затемнён вдвое оверлеем `linear-gradient(rgba(1,5,14,.5)...)` + поверх лёгкий синий radial-глоу справа-сверху (0.22); база секции `#030916`.
+- Фон: **убран по просьбе (2026-07-17)** — секция на чистом `#030916`, `.bank::before` удалён. Раньше было звёздное небо `img/pexels.jpg` + затемнение; файл `img/pexels.jpg` остался в репо, но НЕ используется (можно удалить).
 - Адаптив: ≤1100 — ядро сверху на всю ширину, карточки 2×2, линия/точки/стержни скрыты, фичи 2×2; ≤560 — всё в 1 колонку, круг 280px, плашка колонкой.
 - main.js reveal-селектор: `.country` заменён на `.bank__head, .bank-card, .bank-core, .bank-feat, .bank__tagline`.
 - Проверка: скриншоты верха/низа секции ✅ (через runtime-трюк `document.body.prepend(#bank)` — глубокий скролл в MCP-preview отдаёт чёрные кадры и иногда «умирает» скролл вовсе; после проверки страница перезагружена).
