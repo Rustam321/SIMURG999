@@ -1243,13 +1243,18 @@ body.menu-open { overflow: hidden; }
 .participants__header h2 span { color: var(--accent-blue); }
 .participants__header p { font-size: 14px; color: #c9d6ea; max-width: 420px; }
 
-/* флаг ×1.5 (было 96×64), без скруглений — прямые углы */
+/* флаг ×1.5 (было 96×64), без скруглений — прямые углы.
+   no-repeat обязателен: cover считается от padding-box, а фон рисуется по
+   border-box — на разницу в 1px затекал повтор и справа лезла полоса-орнамент.
+   origin: border-box — чтобы картинка шла и под рамку, без тёмного зазора. */
 .flag {
   width: 144px;
   height: 96px;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
