@@ -1243,11 +1243,10 @@ body.menu-open { overflow: hidden; }
 .participants__header h2 span { color: var(--accent-blue); }
 .participants__header p { font-size: 14px; color: #c9d6ea; max-width: 420px; }
 
-/* флаг ×1.5 (было 96×64) */
+/* флаг ×1.5 (было 96×64), без скруглений — прямые углы */
 .flag {
   width: 144px;
   height: 96px;
-  border-radius: 8px;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
