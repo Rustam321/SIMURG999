@@ -1212,9 +1212,9 @@ body.menu-open { overflow: hidden; }
   height: 230px;
   z-index: 0;
   pointer-events: none;
-  /* затемнение только слева (под флагом и заголовком), плавно в прозрачность */
+  /* тёмный сплошной до 45%, затем плавно в прозрачность до правого края */
   background:
-    linear-gradient(90deg, rgba(4, 10, 22, 0.9) 0%, rgba(4, 10, 22, 0.45) 30%, transparent 62%),
+    linear-gradient(90deg, rgba(4, 10, 22, 0.9) 0%, rgba(4, 10, 22, 0.9) 45%, transparent 100%),
     url('../img/trd.png?v=1') center 68% / cover no-repeat;
   -webkit-mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
           mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
@@ -1266,18 +1266,19 @@ body.menu-open { overflow: hidden; }
 .participants__cats {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 26px;
 }
+/* карточки компактнее по высоте (верхняя граница ниже, нижняя на месте) */
 .cat {
   background: rgba(6, 14, 28, 0.78);
   border: 1px solid rgba(61, 169, 252, 0.5);
   border-radius: var(--radius-sm);
-  padding: 24px 15px 22px;
-  min-height: 330px;
+  padding: 20px 15px 18px;
+  min-height: 290px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 9px;
   text-align: center;
   transition: transform var(--transition-base);
 }
@@ -1402,7 +1403,9 @@ body.menu-open { overflow: hidden; }
 /* карточка тянется на высоту ряда: лишнюю высоту забирает синий футер,
    чтобы под фото не оставалось пустоты */
 .officer-card { display: flex; flex-direction: column; }
-.officer-card .tcard__info { flex: 1; }
+.officer-card .tcard__info { flex: 1; display: flex; flex-direction: column; }
+/* кнопка «Личный кабинет» — ниже, к нижней части футера (смотрится красивее) */
+.officer-card .tcard__btn { margin-top: auto; }
 
 /* ==========================================================================
    SIMURG Bank
