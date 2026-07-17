@@ -1188,11 +1188,11 @@ body.menu-open { overflow: hidden; }
    ========================================================================== */
 .participants { padding: 100px 0; }
 
+/* колонки одной высоты: обе тянутся до высоты ряда (align-items по умолчанию stretch) */
 .participants__inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: 28px;
-  align-items: start;
 }
 
 /* панель по референсу (лист 6): вверху скайлайн trd.png на всю ширину
@@ -1243,25 +1243,24 @@ body.menu-open { overflow: hidden; }
 .participants__header h2 span { color: var(--accent-blue); }
 .participants__header p { font-size: 14px; color: #c9d6ea; max-width: 420px; }
 
+/* флаг ×1.5 (было 96×64) */
 .flag {
-  width: 96px;
-  height: 64px;
-  border-radius: 6px;
+  width: 144px;
+  height: 96px;
+  border-radius: 8px;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
-.flag--by {
-  background:
-    linear-gradient(90deg, #f2f2f2 0 11%, transparent 11%),
-    linear-gradient(180deg, #ce1720 0 66%, #007c30 66%);
-}
+.flag--by { background-image: url('../img/Belarus.png?v=1'); }
 
+/* minmax(0,1fr), а не 1fr: иначе длинные слова (ПРОИЗВОДИТЕЛИ,
+   ЛОГИСТИЧЕСКИЕ) держат min-content и 5-я карточка вылезает за панель */
 .participants__cats {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
   margin-bottom: 26px;
 }
@@ -1389,6 +1388,10 @@ body.menu-open { overflow: hidden; }
    серо-голубая (в tcard — золотая) */
 .officer-card .tcard__name span { color: #8ea9cc; }
 .officer-card .tcard__photo img { aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; }
+/* карточка тянется на высоту ряда: лишнюю высоту забирает синий футер,
+   чтобы под фото не оставалось пустоты */
+.officer-card { display: flex; flex-direction: column; }
+.officer-card .tcard__info { flex: 1; }
 
 /* ==========================================================================
    SIMURG Bank
