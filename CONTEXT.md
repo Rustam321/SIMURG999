@@ -26,6 +26,14 @@
 
 ## Хронология (свежее — сверху)
 
+**Секция PARTICIPANTS «Участники SIMURG в Республике Беларусь» — переверстана по листу 6 PDF «Сайт.pdf»:**
+- `.participants__main` — единая тёмная панель: сверху глоу-заглушка города (`::before` с mask-fade; **фото Минска пользователь пришлёт** — заменить background на `url('../img/<minsk>.jpg') center/cover`), снизу волна из точек (`::after`, radial-dots 14px grid + radial-mask).
+- Шапка: флаг Беларуси 96×64 (CSS исправлен: красный 2/3 + зелёный 1/3 + белая полоса слева 11%) + заголовок clamp 20–27px.
+- `.cat` (5 шт): центрированные, ПОЛНАЯ цветная рамка (не border-top), белесый текст; низ — `.cat__link` (flex-column): круг 42px с рамкой currentColor и стрелкой-маской внутри + подпись ПЕРЕЙТИ. Цвета: blue/green/purple/orange/cyan.
+- `.participants__footer` — бар одной строкой: глобус-иконка + h4 (`<span>SIMURG</span>` синим) + `p` с border-left разделителем; flex-wrap на узких.
+- Карточка офицера: `<aside class="tcard officer-card">` — РЕЮЗ стилей tcard из TEAM (эмблема, коннектор, users.png-фон, кнопка «ЛИЧНЫЙ КАБИНЕТ»); отличие через `.officer-card`: фамилия серо-голубая `#8ea9cc` (не золотая), фото `aspect-ratio 4/5 object-fit cover`. ВНИМАНИЕ: в `img/officer.jpeg` сейчас феникс-заглушка — **ждём портрет Максима Приступы** тем же именем файла.
+- Старые правила `.officer-card__photo/badge/h3/btn` удалены.
+
 **Секция BUSINESS (B2Q/B2B/B2C) — переверстана по референсу (лист 3 PDF «Сайт.pdf», низ; скрин в чате):**
 - Референсы страниц лежат в `Downloads/Сайт.pdf` (6 листов, текст не извлекается — рендерить pymupdf в PNG).
 - Убран CSS-глобус (`.globe`, `.business__globe`) — в макете его нет. Grid-areas упрощены до одной колонки (intro → cards).
