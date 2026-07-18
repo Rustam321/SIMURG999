@@ -1192,7 +1192,7 @@ body.menu-open { overflow: hidden; }
 .participants__inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 18px;
+  gap: 25px;
 }
 
 /* панель по референсу (лист 6): вверху скайлайн trd.png на всю ширину
@@ -1469,11 +1469,13 @@ body.menu-open { overflow: hidden; }
   box-shadow: 0 0 12px rgba(79, 209, 232, 0.35);
 }
 
+/* высота = диаметру круга (330); центрируем по линии-коннектору.
+   крайние (Расчёты, Капитал) на 10px выше — см. правило ниже */
 .bank-card {
   position: relative;
   z-index: 1;
-  align-self: stretch;
-  min-height: 330px;
+  align-self: center;
+  height: 330px;
   padding: 30px 16px 26px;
   border: 1px solid rgba(61, 169, 252, 0.42);
   border-radius: var(--radius-md);
@@ -1497,11 +1499,14 @@ body.menu-open { overflow: hidden; }
 .bank-card::after  { left: 100%; }
 .bank__row .bank-card:first-child::before,
 .bank__row .bank-card:last-child::after { display: none; }
+/* крайние карточки (Расчёты, Капитал) на 10px выше внутренних */
+.bank__row .bank-card:first-child,
+.bank__row .bank-card:last-child { height: 340px; }
 
 .bank-card__icon {
   display: block;
   width: 92px; height: 92px;
-  margin: 0 auto 16px;
+  margin: 0 auto 12px;
   background: var(--accent-blue);
   -webkit-mask-size: contain; mask-size: contain;
   -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
@@ -1518,9 +1523,9 @@ body.menu-open { overflow: hidden; }
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
-.bank-card__list { display: grid; gap: 11px; }
+.bank-card__list { display: grid; gap: 9px; }
 .bank-card__list li {
   font-size: 11.5px;
   font-weight: 600;
