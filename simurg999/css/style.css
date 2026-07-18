@@ -2008,7 +2008,7 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 860px) {
-  .hero__phoenix { width: 160px; top: 16px; right: 16px; }
+  .hero__phoenix { width: 128px; top: 12px; right: 12px; }
   .hero__features { grid-template-columns: repeat(2, 1fr); }
 
   .module-row__items { grid-template-columns: repeat(2, 1fr); }
@@ -2054,6 +2054,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 560px) {
   .container { padding: 0 18px; }
   .hero__features { grid-template-columns: 1fr 1fr; }
+  .hero__phoenix { width: 92px; top: 8px; right: 8px; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
   .module-row__items { grid-template-columns: 1fr 1fr; }
@@ -2174,12 +2175,14 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    Scroll reveal
    ========================================================================== */
-.reveal {
+/* Reveal is gated behind the `.js` class (set inline in <head>) so that if
+   JS is disabled or fails to run, all content stays visible instead of blank */
+.js .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2191,6 +2194,6 @@ body.menu-open { overflow: hidden; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   .cycle__pulse { display: none; }
 }
