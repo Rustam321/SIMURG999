@@ -578,28 +578,70 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about__bg about__bg--placeholder"></div>
-    <div class="about__overlay"></div>
     <div class="container">
-      <h2 class="section-title section-title--center">О торговой системе <span>SIMURG</span></h2>
+      <div class="about__divider" aria-hidden="true"><i></i><i></i></div>
+
+      <!-- Framed banner header. Фон-скайлайн — заглушка (тёмный градиент); фото добавим позже. -->
+      <header class="about__head">
+        <h2 class="about__title">О ТОРГОВОЙ СИСТЕМЕ <span>SIMURG</span></h2>
+      </header>
+
+      <div class="about__divider" aria-hidden="true"><i></i><i></i></div>
 
       <div class="about__list">
-        <div class="about__item">
-          <h3>БИЗНЕС-МОДЕЛЬ ТОРГОВОЙ СИСТЕМЫ <span>SIMURG INTELLIGENCE</span></h3>
-          <p>Это система, которая превращает неопределённость международной торговли в управляемую структуру сделки через аналитику, предиктивные риски, финансовое моделирование и стратегию исполнения. Мы не продаём действия — мы продаём результат сделки с контролем рисков.</p>
-        </div>
-        <div class="about__item">
-          <h3>НАША МИССИЯ</h3>
-          <p>Создавать интеллектуальную инфраструктуру глобальной торговли, где каждая сделка становится предсказуемой, защищённой и результативной для всех участников.</p>
-        </div>
-        <div class="about__item">
-          <h3>КАК МЫ РАБОТАЕМ</h3>
-          <p>Мы объединяем данные, аналитику, финансы и исполнение в единую систему управления сделкой в реальном времени через <strong>SIMURG CONTROL TOWER</strong> и <strong>SIMURG-БАНК</strong>.</p>
-        </div>
-        <div class="about__item">
-          <h3>НАШЕ ПРЕИМУЩЕСТВО</h3>
-          <p>Уникальная интеграция аналитики, финансовой логистики и контроля исполнения в одной экосистеме, что снижает неопределённость, минимизирует риски и увеличивает вероятность успешного завершения сделки.</p>
-        </div>
+        <article class="about-row reveal">
+          <div class="about-row__head">
+            <h3 class="about-row__title">БИЗНЕС-МОДЕЛЬ<br><span class="about-row__title-sub">ТОРГОВОЙ СИСТЕМЫ</span><br><span class="about-row__title-accent">SIMURG INTELLIGENCE</span></h3>
+          </div>
+          <span class="about-row__conn" aria-hidden="true"></span>
+          <div class="about-row__body">
+            <p>Это система, которая превращает неопределённость международной торговли в управляемую структуру сделки через аналитику, предиктивные риски, финансовое моделирование и стратегию исполнения.</p>
+            <p>Мы не продаём действия — мы продаём результат сделки с контролем рисков.</p>
+          </div>
+        </article>
+
+        <article class="about-row reveal">
+          <div class="about-row__head">
+            <h3 class="about-row__title">НАША МИССИЯ</h3>
+          </div>
+          <span class="about-row__conn" aria-hidden="true"></span>
+          <div class="about-row__body">
+            <p>Создавать интеллектуальную инфраструктуру глобальной торговли, где каждая сделка становится предсказуемой, защищённой и результативной для всех участников.</p>
+          </div>
+        </article>
+
+        <article class="about-row reveal">
+          <div class="about-row__head">
+            <h3 class="about-row__title">КАК МЫ РАБОТАЕМ</h3>
+          </div>
+          <span class="about-row__conn" aria-hidden="true"></span>
+          <div class="about-row__body">
+            <p>Мы объединяем данные, аналитику, финансы и исполнение в единую систему управления сделкой в реальном времени через <strong>SIMURG CONTROL TOWER</strong> и <strong>SIMURG-БАНК</strong>.</p>
+          </div>
+        </article>
+
+        <article class="about-row reveal">
+          <div class="about-row__head">
+            <h3 class="about-row__title">НАШЕ ПРЕИМУЩЕСТВО</h3>
+          </div>
+          <span class="about-row__conn" aria-hidden="true"></span>
+          <div class="about-row__body">
+            <p>Уникальная интеграция аналитики, финансовой логистики и контроля исполнения в одной экосистеме, что снижает неопределённость, минимизирует риски и увеличивает вероятность успешного завершения сделки.</p>
+          </div>
+        </article>
+
+        <article class="about-row reveal">
+          <div class="about-row__head">
+            <h3 class="about-row__title">НАШ РЕЗУЛЬТАТ</h3>
+          </div>
+          <span class="about-row__conn" aria-hidden="true"></span>
+          <div class="about-row__body">
+            <p>Мы обеспечиваем предсказуемый результат сделки с прозрачностью, скоростью и безопасностью на всех этапах — от анализа и структурирования до исполнения и финансового закрытия.</p>
+          </div>
+        </article>
       </div>
+
+      <div class="about__divider" aria-hidden="true"><i></i><i></i></div>
     </div>
   </section>
 
@@ -607,19 +649,26 @@
   <section class="business" id="business">
     <h2 class="visually-hidden">Бизнес-модель</h2>
     <div class="container business__inner">
-      <div class="business__intro">
-        <a href="#hero" class="logo">
-          <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
-        </a>
-        <p>Мы выстраиваем эффективные связи между бизнесом, государством и потребителями, обеспечивая прозрачность, скорость и надёжность на каждом этапе международной торговли.</p>
-      </div>
-      <div class="business__globe">
-        <div class="globe"></div>
+      <div class="business__head">
+        <div class="business__intro">
+          <a href="#hero" class="logo">
+            <img src="img/logo.png" alt="SIMURG — Trade Intelligence System">
+          </a>
+          <p>Мы выстраиваем эффективные связи между бизнесом, государством и потребителями, обеспечивая прозрачность, скорость и надёжность на каждом этапе международной торговли.</p>
+        </div>
+        <div class="business__globe" id="companyGlobe">
+          <canvas id="companyGlobeCanvas"></canvas>
+        </div>
       </div>
       <div class="business__cards">
         <div class="biz-card biz-card--blue">
-          <h3>B2Q</h3>
-          <span>BUSINESS TO GOVERNMENT</span>
+          <div class="biz-card__head">
+            <span class="biz-card__icon biz-card__icon--gov" aria-hidden="true"></span>
+            <div>
+              <h3>B2Q</h3>
+              <span class="biz-card__tag">BUSINESS TO GOVERNMENT</span>
+            </div>
+          </div>
           <ul>
             <li>Взаимодействие с государственными органами и учреждениями.</li>
             <li>Госзакупки, тендеры, лицензирование.</li>
@@ -627,8 +676,13 @@
           </ul>
         </div>
         <div class="biz-card biz-card--green">
-          <h3>B2B</h3>
-          <span>BUSINESS TO BUSINESS</span>
+          <div class="biz-card__head">
+            <span class="biz-card__icon biz-card__icon--biz" aria-hidden="true"></span>
+            <div>
+              <h3>B2B</h3>
+              <span class="biz-card__tag">BUSINESS TO BUSINESS</span>
+            </div>
+          </div>
           <ul>
             <li>Работа с корпоративными клиентами и партнёрами.</li>
             <li>Оптовые поставки, контракты, логистика.</li>
@@ -636,8 +690,13 @@
           </ul>
         </div>
         <div class="biz-card biz-card--purple">
-          <h3>B2C</h3>
-          <span>BUSINESS TO CONSUMER</span>
+          <div class="biz-card__head">
+            <span class="biz-card__icon biz-card__icon--cons" aria-hidden="true"></span>
+            <div>
+              <h3>B2C</h3>
+              <span class="biz-card__tag">BUSINESS TO CONSUMER</span>
+            </div>
+          </div>
           <ul>
             <li>Взаимодействие с конечными потребителями.</li>
             <li>Розничные продажи, e-commerce, доставка.</li>
@@ -656,53 +715,58 @@
           <span class="flag flag--by"></span>
           <div>
             <h2>УЧАСТНИКИ <span>SIMURG</span> В РЕСПУБЛИКЕ БЕЛАРУСЬ</h2>
-            <p>Компании из различных отраслей экономики, представленные в каждой из стран платформы.</p>
+            <p>Компании из различных отраслей экономики,<br>представленные в каждой из стран платформы.</p>
           </div>
         </div>
         <div class="participants__cats">
           <div class="cat cat--blue">
             <h4>ПРОИЗВОДИТЕЛИ</h4>
             <p>Предприятия всех масштабов, производящие товары и продукцию для внутреннего и международного рынков.</p>
-            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+            <a href="#" class="cat__link"><span class="cat__link-circle" aria-hidden="true"></span>ПЕРЕЙТИ</a>
           </div>
           <div class="cat cat--green">
             <h4>ЛОГИСТИЧЕСКИЕ ОПЕРАТОРЫ</h4>
             <p>Компании, обеспечивающие международные и локальные перевозки, складские услуги и логистические решения.</p>
-            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+            <a href="#" class="cat__link"><span class="cat__link-circle" aria-hidden="true"></span>ПЕРЕЙТИ</a>
           </div>
           <div class="cat cat--purple">
             <h4>БАНКИ</h4>
             <p>Финансовые институты, предоставляющие услуги по международным платежам, кредитованию и торговому финансированию.</p>
-            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+            <a href="#" class="cat__link"><span class="cat__link-circle" aria-hidden="true"></span>ПЕРЕЙТИ</a>
           </div>
           <div class="cat cat--orange">
             <h4>СТРАХОВЫЕ КОМПАНИИ</h4>
             <p>Компании, предоставляющие страховые решения для защиты бизнеса и минимизации коммерческих рисков.</p>
-            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+            <a href="#" class="cat__link"><span class="cat__link-circle" aria-hidden="true"></span>ПЕРЕЙТИ</a>
           </div>
           <div class="cat cat--cyan">
             <h4>AI НАПРАВЛЕНИЕ</h4>
             <p>Технологические компании и AI-решения, оптимизирующие процессы, аналитику и принятие решений в торговле.</p>
-            <a href="#" class="cat__link">→ ПЕРЕЙТИ</a>
+            <a href="#" class="cat__link"><span class="cat__link-circle" aria-hidden="true"></span>ПЕРЕЙТИ</a>
           </div>
         </div>
         <div class="participants__footer">
           <span class="participants__footer-icon"></span>
-          <div>
-            <h4>SIMURG ОБЪЕДИНЯЕТ ПАРТНЁРОВ ДЛЯ УСТОЙЧИВОГО РОСТА</h4>
-            <p>Широкая экосистема участников — основа эффективной трансграничной торговли.</p>
-          </div>
+          <h4><span>SIMURG</span> ОБЪЕДИНЯЕТ ПАРТНЁРОВ ДЛЯ УСТОЙЧИВОГО РОСТА</h4>
+          <p>Широкая экосистема участников — основа эффективной трансграничной торговли.</p>
         </div>
       </div>
 
-      <aside class="officer-card">
-        <div class="officer-card__photo" style="background-image:url('img/officer.jpeg')"></div>
-        <span class="officer-card__badge">TRADE OFFICER</span>
-        <h3>МАКСИМ<br>ПРИСТУПА</h3>
-        <a href="#" class="btn btn--outline btn--full">
-          <span class="btn__icon btn__icon--user"></span>
-          ЛИЧНЫЙ КАБИНЕТ →
-        </a>
+      <aside class="tcard officer-card">
+        <div class="tcard__photo"><img src="img/officer.jpeg?v=2" alt="Максим Приступа"></div>
+        <div class="tcard__info">
+          <span class="tcard__conn" aria-hidden="true"></span>
+          <div class="tcard__brand">
+            <span class="tcard__emblem" aria-hidden="true"><img src="img/ico.png" alt=""></span>
+            <span class="tcard__tag">TRADE OFFICER</span>
+          </div>
+          <h3 class="tcard__name">МАКСИМ <span>ПРИСТУПА</span></h3>
+          <a href="#" class="tcard__btn">
+            <span class="tcard__btn-ic" aria-hidden="true"></span>
+            <span class="tcard__btn-label">ЛИЧНЫЙ КАБИНЕТ</span>
+            <span class="tcard__btn-chev" aria-hidden="true"></span>
+          </a>
+        </div>
       </aside>
     </div>
   </section>
@@ -736,5 +800,7 @@
 <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 
 <script src="js/main.js"></script>
+<script src="js/d3.min.js" defer></script>
+<script src="js/company-globe.js" defer></script>
 </body>
 </html>
