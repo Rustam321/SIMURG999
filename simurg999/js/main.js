@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reveal animations on scroll (staggered by position among siblings)
   const revealTargets = document.querySelectorAll(
-    '.hero__left > *, .feature-card, .module-row, .cycle__role, .cycle__step, .about-row, .biz-card, .cat, .tcard, .bank__head, .bank-card, .bank-core, .bank-feat, .bank__tagline'
+    '.hero__left > *, .feature-card, .module-row, .cycle__role, .cycle__step, .about-row, .biz-card, .cat, .tcard, .bank__head, .bank-card, .bank-core, .bank-feat, .bank__tagline, .portal__left > *, .portal__countries-title, .country-card'
   );
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
