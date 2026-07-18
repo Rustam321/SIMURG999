@@ -1257,7 +1257,7 @@ body.menu-open { overflow: hidden; }
    origin: border-box — чтобы картинка шла и под рамку, без тёмного зазора. */
 .flag {
   width: 144px;
-  height: 96px;
+  height: 72px; /* 2:1 — official Belarus flag ratio, so the SVG fills edge-to-edge without crop */
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
@@ -1266,7 +1266,7 @@ body.menu-open { overflow: hidden; }
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
-.flag--by { background-image: url('../img/Belarus.png?v=1'); }
+.flag--by { background-image: url('../img/flag-by.svg'); }
 
 /* minmax(0,1fr), а не 1fr: иначе длинные слова (ПРОИЗВОДИТЕЛИ,
    ЛОГИСТИЧЕСКИЕ) держат min-content и 5-я карточка вылезает за панель */
@@ -1959,6 +1959,19 @@ body.menu-open { overflow: hidden; }
   margin-bottom: 14px;
 }
 .footer__col--contacts p a:hover { color: var(--accent-blue); }
+
+.footer__bottom {
+  position: relative;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+.footer__bottom p {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
 
 /* ==========================================================================
    Back to top
