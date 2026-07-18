@@ -51,6 +51,7 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip; /* clip doesn't create a scroll container (unlike hidden); hidden stays as fallback for old browsers */
 }
 
 /* Stepped responsive container (Bootstrap-style):
@@ -352,10 +353,10 @@ body.menu-open { overflow: hidden; }
   opacity: 0.55;
 }
 
-.hero__bg { background-image: url('../img/2bg.png?v=2'); opacity: 1; }
+.hero__bg { background-image: url('../img/2bg.webp'); opacity: 1; }
 
 .modules__bg--placeholder { background: radial-gradient(ellipse at 40% 60%, #0a1a14 0%, var(--bg-deep) 100%); opacity: 1; }
-.cycle__bg { background-image: url('../img/bg3.png?v=2'); opacity: 1; }
+.cycle__bg { background-image: url('../img/bg3.webp'); opacity: 1; }
 .about__bg--placeholder   { background: radial-gradient(ellipse at 50% 0%, #0a1426 0%, #04060d 62%); opacity: 1; }
 
 /* Pages 1-3 and the cycle section show their backgrounds plainly —
@@ -382,7 +383,7 @@ body.menu-open { overflow: hidden; }
   display: flex;
   align-items: center;
   position: relative;
-  background-image: url('../img/bg1.png?v=2');
+  background-image: url('../img/bg1.webp');
   background-size: cover;
   background-position: center 40%;
   padding: 88px 0 48px;
@@ -581,7 +582,7 @@ body.menu-open { overflow: hidden; }
   justify-content: center;
   margin-bottom: 70px;
   padding: 90px 20px 0;
-  background: url('../img/bg4.png?v=6') center center / 100% auto no-repeat;
+  background: url('../img/bg4.webp') center center / 100% auto no-repeat;
   aspect-ratio: 1690 / 400;
   overflow: hidden;
 }
@@ -983,7 +984,7 @@ body.menu-open { overflow: hidden; }
   margin: 12px 0;
   border-radius: 6px;
   overflow: hidden;
-  background: url('../img/trd.png?v=1') center / 100% auto no-repeat #050b18;
+  background: url('../img/trd.webp') center / 100% auto no-repeat #050b18;
 }
 .about__title {
   font-family: var(--font-heading);
@@ -1221,7 +1222,7 @@ body.menu-open { overflow: hidden; }
   /* тёмный сплошной до 45%, затем плавно в прозрачность до правого края */
   background:
     linear-gradient(90deg, rgba(4, 10, 22, 0.9) 0%, rgba(4, 10, 22, 0.9) 45%, transparent 100%),
-    url('../img/trd.png?v=1') center 68% / cover no-repeat;
+    url('../img/trd.webp') center 68% / cover no-repeat;
   -webkit-mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
           mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
 }
@@ -1256,7 +1257,7 @@ body.menu-open { overflow: hidden; }
    origin: border-box — чтобы картинка шла и под рамку, без тёмного зазора. */
 .flag {
   width: 144px;
-  height: 96px;
+  height: 72px; /* 2:1 — official Belarus flag ratio, so the SVG fills edge-to-edge without crop */
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
@@ -1265,7 +1266,7 @@ body.menu-open { overflow: hidden; }
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
-.flag--by { background-image: url('../img/Belarus.png?v=1'); }
+.flag--by { background-image: url('../img/flag-by.svg'); }
 
 /* minmax(0,1fr), а не 1fr: иначе длинные слова (ПРОИЗВОДИТЕЛИ,
    ЛОГИСТИЧЕСКИЕ) держат min-content и 5-я карточка вылезает за панель */
@@ -1720,7 +1721,7 @@ body.menu-open { overflow: hidden; }
   top: 0; left: 0; right: 0;
   aspect-ratio: 1577 / 374;      /* tracks the image → fade lines up with its edge */
   max-height: 420px;             /* guard against blow-up on ultra-wide / 4K */
-  background: url('../img/user.png?v=1') top center / cover no-repeat;
+  background: url('../img/user.webp') top center / cover no-repeat;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 58%, transparent 100%);
           mask-image: linear-gradient(180deg, #000 0%, #000 58%, transparent 100%);
   z-index: 0;
@@ -1757,7 +1758,7 @@ body.menu-open { overflow: hidden; }
   padding: 22px 20px 20px;
   background:
     linear-gradient(90deg, rgba(6, 13, 28, 0.92) 0%, rgba(6, 13, 28, 0.55) 45%, rgba(6, 13, 28, 0.1) 100%),
-    url('../img/users.png?v=1') center center / auto 100% no-repeat #060d1c;
+    url('../img/users.webp') center center / auto 100% no-repeat #060d1c;
   overflow: hidden;
 }
 .tcard__info > * { position: relative; z-index: 1; }
@@ -1959,6 +1960,19 @@ body.menu-open { overflow: hidden; }
 }
 .footer__col--contacts p a:hover { color: var(--accent-blue); }
 
+.footer__bottom {
+  position: relative;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+.footer__bottom p {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 /* ==========================================================================
    Back to top
    ========================================================================== */
@@ -2008,7 +2022,7 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 860px) {
-  .hero__phoenix { width: 160px; top: 16px; right: 16px; }
+  .hero__phoenix { width: 128px; top: 12px; right: 12px; }
   .hero__features { grid-template-columns: repeat(2, 1fr); }
 
   .module-row__items { grid-template-columns: repeat(2, 1fr); }
@@ -2054,6 +2068,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 560px) {
   .container { padding: 0 18px; }
   .hero__features { grid-template-columns: 1fr 1fr; }
+  .hero__phoenix { width: 92px; top: 8px; right: 8px; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
   .module-row__items { grid-template-columns: 1fr 1fr; }
@@ -2174,12 +2189,14 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    Scroll reveal
    ========================================================================== */
-.reveal {
+/* Reveal is gated behind the `.js` class (set inline in <head>) so that if
+   JS is disabled or fails to run, all content stays visible instead of blank */
+.js .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2191,6 +2208,6 @@ body.menu-open { overflow: hidden; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   .cycle__pulse { display: none; }
 }
