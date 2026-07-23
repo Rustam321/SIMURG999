@@ -988,31 +988,57 @@
 
 <!-- FOOTER -->
 <footer class="footer" id="contacts">
-    <div class="footer__map"></div>
+  <div class="footer__banner">
+    <div class="footer__bgimg" aria-hidden="true"></div>
+    <div class="footer__scrim" aria-hidden="true"></div>
+
+    <span class="footer__hud footer__hud--top" aria-hidden="true"></span>
+
     <div class="container footer__inner">
-      <div class="footer__col">
+      <!-- Левая панель: сводка разделов -->
+      <div class="footer__panel">
         <ul class="footer__list">
-          <li><span class="footer__icon footer__icon--network"></span>Интеллектуальная система управления международными сделками</li>
-          <li><span class="footer__icon footer__icon--scale"></span>Бизнес-модель B2Q, B2B, B2C</li>
-          <li><span class="footer__icon footer__icon--db"></span>Информационная логистика</li>
-          <li><span class="footer__icon footer__icon--bank"></span>SIMURG-Банк</li>
-          <li><span class="footer__icon footer__icon--gear"></span>Операционные модули логистики</li>
-          <li><span class="footer__icon footer__icon--globe"></span>Веб-портал — Trade Officer — участники по странам</li>
+          <li><span class="footer__hex footer__hex--brain" aria-hidden="true"></span><span>Интеллектуальная система управления международными сделками</span></li>
+          <li><span class="footer__hex footer__hex--biz" aria-hidden="true"></span><span>Бизнес-модель B2Q, B2B, B2C</span></li>
+          <li><span class="footer__hex footer__hex--info" aria-hidden="true"></span><span>Информационная логистика</span></li>
+          <li><span class="footer__hex footer__hex--bank" aria-hidden="true"></span><span>SIMURG-Банк</span></li>
+          <li><span class="footer__hex footer__hex--modules" aria-hidden="true"></span><span>Операционные модули логистики</span></li>
+          <li><span class="footer__hex footer__hex--portal" aria-hidden="true"></span><span>Веб-портал — Trade Officer — участники по странам</span></li>
         </ul>
       </div>
-      <div class="footer__col footer__col--contacts">
-        <h3>ТОРГОВАЯ СИСТЕМА<br><span>SIMURG</span></h3>
-        <small>ДЕПАРТАМЕНТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ</small>
-        <p><span class="footer__icon footer__icon--phone"></span> ТЕЛЕФОН: <a href="tel:+375445550806">+375 44 555 08 06</a></p>
-        <p><span class="footer__icon footer__icon--phone"></span> ТЕЛЕФОН: <a href="tel:+79254451949">+7 925 445 19 49</a></p>
-        <p><span class="footer__icon footer__icon--mail"></span> E-MAIL: <a href="mailto:info@simurg.io">info@simurg.io</a></p>
+
+      <!-- Правая колонка: бренд + контакты -->
+      <div class="footer__contacts">
+        <h3 class="footer__brand">Торговая система<br><span>SIMURG</span></h3>
+        <p class="footer__dept">Департамент информационных технологий</p>
+        <ul class="footer__contact-list">
+          <li>
+            <span class="footer__cico footer__cico--phone" aria-hidden="true"></span>
+            <span class="footer__clabel">Телефон:</span>
+            <a href="tel:+375445550806">+375 44 555 08 06</a>
+          </li>
+          <li>
+            <span class="footer__cico footer__cico--phone" aria-hidden="true"></span>
+            <span class="footer__clabel">Телефон:</span>
+            <a href="tel:+79254451949">+7 925 445 19 49</a>
+          </li>
+          <li>
+            <span class="footer__cico footer__cico--mail" aria-hidden="true"></span>
+            <span class="footer__clabel">E-mail:</span>
+            <a href="mailto:info@simurg.io">info@simurg.io</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <p>© 2026 SIMURG — Торговая система. Все права защищены.</p>
-      </div>
+
+    <span class="footer__hud footer__hud--bottom" aria-hidden="true"></span>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <p>© 2026 SIMURG — Торговая система. Все права защищены.</p>
     </div>
+  </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
