@@ -1438,22 +1438,32 @@ body.menu-open { overflow: hidden; }
 /* SIMURG-Банк — инфографика по PDF: шапка по центру, ряд 2 карточки +
    светящееся ядро-круг + 2 карточки на общем коннекторе, 4 фичи, плашка.
    Фон — чистый тёмный (фото-фон убран по просьбе). */
-/* Фон — карта Земли ночью (глобальная торговая инфраструктура).
-   Слои сверху вниз: затемняющий скрим → карта → базовый цвет.
-   Скрим плотнее сверху и снизу (там заголовок и плашка), в середине
-   светлее — под инфографикой карта проступает. */
+/* Фон нарисован CSS'ом (без картинки): «финансовая инфраструктура» —
+   орбиты вокруг ядра инфографики + техническая сетка + свечения.
+   Слои сверху вниз: виньетка → орбиты → сетка → глоу ядра → глоу краёв → база.
+   Фото карты не используем: она уже работает фоном ВЭБ-ПОРТАЛА, и две
+   секции подряд с одинаковым снимком выглядели бы дублем. */
 .bank {
   position: relative;
   padding: 96px 0 110px;
   overflow: hidden;
   background:
-    linear-gradient(180deg,
-      rgba(3, 9, 22, 0.90) 0%,
-      rgba(3, 9, 22, 0.68) 30%,
-      rgba(3, 9, 22, 0.68) 66%,
-      rgba(3, 9, 22, 0.93) 100%),
-    url('../img/bank.webp') center / cover no-repeat,
-    #030916;
+    /* виньетка: края в тень, центр остаётся под инфографику */
+    radial-gradient(125% 95% at 50% 44%, transparent 38%, rgba(3, 7, 16, 0.5) 76%, rgba(3, 7, 16, 0.92) 100%),
+    /* орбиты — расходятся из точки, где стоит круг-ядро SIMURG */
+    repeating-radial-gradient(circle at 50% 44%, transparent 0 85px, rgba(61, 169, 252, 0.06) 85px 86px, transparent 86px 170px),
+    /* две акцентные орбиты потолще — задают ритм */
+    radial-gradient(circle at 50% 44%, transparent 0 254px, rgba(61, 169, 252, 0.13) 254px 256px, transparent 256px),
+    radial-gradient(circle at 50% 44%, transparent 0 424px, rgba(61, 169, 252, 0.09) 424px 426px, transparent 426px),
+    /* техническая сетка */
+    repeating-linear-gradient(0deg,  rgba(61, 169, 252, 0.04) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, rgba(61, 169, 252, 0.04) 0 1px, transparent 1px 64px),
+    /* свечение ядра и краёв */
+    radial-gradient(40% 36% at 50% 44%, rgba(61, 169, 252, 0.18), transparent 70%),
+    radial-gradient(75% 42% at 50% 0%,  rgba(61, 169, 252, 0.11), transparent 72%),
+    radial-gradient(95% 50% at 50% 100%, rgba(61, 169, 252, 0.07), transparent 72%),
+    /* база */
+    linear-gradient(180deg, #061224 0%, #050d1c 46%, #03070f 100%);
 }
 .bank .container { position: relative; z-index: 1; }
 

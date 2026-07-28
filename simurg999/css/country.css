@@ -1,0 +1,104 @@
+/* ==========================================================================
+   СТРАНИЦЫ УЧАСТНИКОВ ПО СТРАНАМ  (country-*.html)
+   Вёрстка панели полностью переиспользуется из style.css (.participants,
+   .cat, .tcard, .officer-card) — здесь только обвязка страницы, флаг
+   произвольных пропорций и состояние «Trade Officer не назначен».
+   Страницы генерируются из шаблона, см. CONTEXT.md.
+   ========================================================================== */
+
+.country {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--bg-deep);
+  padding: 96px 0 72px;
+  display: flex;
+  flex-direction: column;
+}
+.country__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(70% 40% at 50% 0%, rgba(61, 169, 252, 0.14), transparent 72%),
+    radial-gradient(110% 70% at 50% 115%, rgba(61, 169, 252, 0.06), transparent 70%),
+    linear-gradient(180deg, #061225 0%, #050c1a 48%, #04070f 100%);
+}
+/* вертикальное auto: центрирует, но схлопывается при переполнении —
+   низ панели остаётся доступен (те же грабли, что и на cabinet.html) */
+.country__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: auto;
+}
+/* на странице страны секция участников идёт без своих внешних отступов */
+.country .participants { padding: 0; }
+
+/* Флаг оформлен точно как на главной (144px, cover, та же рамка из .flag),
+   но высота идёт от пропорции самого флага — --flag-ratio задаётся инлайном
+   на каждой странице. Иначе в жёстком 2:1 блоке квадратный флаг Швейцарии
+   терял половину, а флаги 3:2 — четверть по высоте. У Беларуси 2/1, т.е.
+   ровно 144×72 — как на главной. */
+.country .flag {
+  height: auto;
+  aspect-ratio: var(--flag-ratio, 2 / 1);
+}
+
+
+/* ─── Trade Officer не назначен ───────────────────────────────────────────
+   Данные (имя + фото) есть только по Беларуси. Вместо выдуманных имён —
+   честная заглушка: силуэт и «уточняется». Заменяется на реальную
+   карточку, как только придут ФИО и фото. */
+.tcard__photo--tba {
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0d1c34 0%, #081426 100%);
+  border-bottom: 1px solid rgba(61, 169, 252, 0.18);
+}
+.tcard__photo--tba::before {
+  content: '';
+  width: 46%;
+  height: 46%;
+  background: rgba(96, 162, 255, 0.32);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8.5' r='4'/%3E%3Cpath d='M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8.5' r='4'/%3E%3Cpath d='M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.officer-card--tba .tcard__name { color: #8ea9cc; }
+.tcard__note {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #c3d1e6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  max-width: 210px;
+  margin: -4px 0 14px;
+}
+
+/* ─── Кнопка «к списку стран» ─────────────────────────────────────────── */
+.country__home {
+  position: fixed;
+  top: 20px; right: 20px;
+  z-index: 20;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-secondary);
+  background: rgba(12, 19, 34, 0.8);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(10px);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.country__home:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
+
+/* ─── Адаптив ─────────────────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .country { padding: 84px 0 56px; }
+}
+@media (max-width: 560px) {
+  .country__home { top: 14px; right: 14px; padding: 8px 13px; font-size: 12px; }
+}
