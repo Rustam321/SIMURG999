@@ -1,0 +1,42 @@
+/* ==========================================================================
+   ОПЕРАЦИОННЫЕ МОДУЛИ ЛОГИСТИКИ  (modules.html)
+   Секция .modules перенесена с главной как есть — вся её вёрстка живёт
+   в style.css и здесь НЕ дублируется. Тут только обвязка страницы
+   и возврат на главную. Страница открывается из бургер-меню главной.
+   ========================================================================== */
+
+.modules-page {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg-deep);
+}
+
+/* ─── Кнопка «на главную» (фикс., как на about/portal/cabinet/country) ──── */
+.modules__home {
+  position: fixed;
+  top: 20px; right: 20px;
+  z-index: 20;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-secondary);
+  background: rgba(12, 19, 34, 0.8);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(10px);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.modules__home:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
+
+/* На узких баннер-заголовок становится тонкой полосой (aspect-ratio 1690/420),
+   и фикс-кнопка налезает на заголовок — отодвигаем секцию вниз, как на about.html */
+@media (max-width: 860px) {
+  .modules-page .modules { padding-top: 60px; }
+}
+
+@media (max-width: 560px) {
+  .modules__home { top: 14px; right: 14px; padding: 8px 13px; font-size: 12px; }
+  .modules-page .modules { padding-top: 52px; }
+}

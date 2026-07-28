@@ -46,6 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Hero background video: не декодируем впустую, когда баннер вне экрана
+  const heroVideo = document.querySelector('.hero__video');
+  if (heroVideo) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      heroVideo.pause();
+      heroVideo.removeAttribute('autoplay');
+    } else if ('IntersectionObserver' in window) {
+      const vObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const p = heroVideo.play();
+              if (p && p.catch) p.catch(() => {});
+            } else {
+              heroVideo.pause();
+            }
+          });
+        },
+        { threshold: 0 }
+      );
+      vObserver.observe(heroVideo);
+    }
+  }
+
   // Reveal animations on scroll (staggered by position among siblings)
   const revealTargets = document.querySelectorAll(
     '.hero__left > *, .feature-card, .module-row, .cycle__role, .cycle__step, .about-row, .biz-card, .cat, .tcard, .bank__head, .bank-card, .bank-core, .bank-feat, .bank__tagline, .portal__left > *, .portal__countries-title, .country-card, .cabinet__head > *, .cab-card, .cabinet__banner'

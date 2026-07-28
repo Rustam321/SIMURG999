@@ -393,22 +393,58 @@ body.menu-open { overflow: hidden; }
   flex-direction: column;
   justify-content: center;
 }
+/* Баннер 1-го экрана: фон — видео (ночной скайлайн в HUD-рамке).
+   aspect-ratio совпадает с кадром видео (1920×622), поэтому на десктопе
+   рамка видна целиком, без обрезки; min/max-height — предохранители
+   на узких и сверхшироких экранах. Постер служит и фолбэком, если видео
+   не загрузилось или отключена анимация. */
 .hero__title-block {
   width: 100%;
-  min-height: 52vh;
+  aspect-ratio: 1920 / 622;
+  /* 320px — пол, чтобы заголовок не обрезался при коротком вьюпорте:
+     aspect-ratio задаёт высоту от ширины и сам по себе контент не учитывает */
+  min-height: max(52vh, 320px);
+  max-height: 78vh;
   display: flex;
   align-items: center;
   position: relative;
-  background-image: url('../img/bg1.webp');
+  background-color: #030916;
+  background-image: url('../img/hero-banner-poster.webp');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center;
   padding: 88px 0 48px;
   overflow: hidden;
+}
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Затемнение слева — под заголовком, справа скайлайн остаётся чистым.
+   Плотная зона тянется до 60%: текст занимает 7–55% ширины полосы, а по ходу
+   наезда камеры под него заходят подсвеченные окна (яркость до 250). */
+.hero__title-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(3, 9, 22, 0.86) 0%,
+    rgba(3, 9, 22, 0.78) 38%,
+    rgba(3, 9, 22, 0.52) 60%,
+    rgba(3, 9, 22, 0.16) 80%,
+    rgba(3, 9, 22, 0) 96%);
 }
 .hero__title-block > .container { position: relative; z-index: 1; }
 .hero__title {
   font-size: clamp(34px, 6vw, 56px);
   line-height: 1.1;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
   animation: riseIn 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 .hero__title span { color: #fff; }
@@ -419,6 +455,7 @@ body.menu-open { overflow: hidden; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-blue);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
   animation: riseIn 0.9s 0.18s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
@@ -589,7 +626,15 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    Modules
    ========================================================================== */
-.modules { position: relative; padding: 0 0 110px; }
+/* Фон секции — тёмная техническая база в формате сайта
+   (заметно темнее общего --bg-base, с лёгким холодным свечением у баннера) */
+.modules {
+  position: relative;
+  padding: 0 0 110px;
+  background:
+    radial-gradient(120% 55% at 50% 0%, rgba(61, 169, 252, 0.06) 0%, transparent 62%),
+    linear-gradient(180deg, #03060d 0%, #050912 40%, #04070f 100%);
+}
 
 /* Full-bleed city banner behind the heading — shown whole, no zoom */
 .modules__head {
@@ -602,6 +647,18 @@ body.menu-open { overflow: hidden; }
   background: url('../img/trd.webp') center / 100% auto no-repeat #050b18;
   aspect-ratio: 1690 / 420;
   overflow: hidden;
+}
+/* Скрим поверх скайлайна: снимает яркость фото и сводит низ баннера
+   к фону секции, чтобы стыка не было видно */
+.modules__head::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg,
+    rgba(3, 6, 13, 0.78) 0%,
+    rgba(3, 6, 13, 0.52) 46%,
+    rgba(3, 6, 13, 0.94) 100%);
 }
 .modules__head .section-title {
   position: relative;
@@ -2166,6 +2223,16 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 860px) {
   .hero__phoenix { width: 128px; top: 12px; right: 12px; }
   .hero__features { grid-template-columns: repeat(2, 1fr); }
+  /* узкий кадр режется по бокам — держим в кадре правую часть со скайлайном,
+     а заголовок закрываем более плотным вертикальным скримом */
+  .hero__video { object-position: 70% center; }
+  .hero__title-block { background-position: 70% center; }
+  .hero__title-scrim {
+    background: linear-gradient(180deg,
+      rgba(3, 9, 22, 0.82) 0%,
+      rgba(3, 9, 22, 0.70) 45%,
+      rgba(3, 9, 22, 0.82) 100%);
+  }
 
   .module-row__items { grid-template-columns: repeat(2, 1fr); }
 
@@ -2352,4 +2419,6 @@ body.menu-open { overflow: hidden; }
   }
   .js .reveal { opacity: 1; transform: none; }
   .cycle__pulse { display: none; }
+  /* вместо видео — статичный постер (он же фон .hero__title-block) */
+  .hero__video { display: none; }
 }
